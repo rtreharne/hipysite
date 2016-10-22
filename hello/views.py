@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
+from .models import Greeting, Beekeeper
 
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, 'index.html')
+    beekeepers = Beekeeper.objects.all()
+    return render(request, 'index.html', {'beekeepers': beekeepers})
 
 
 def db(request):

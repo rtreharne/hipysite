@@ -1,4 +1,5 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
+from django.conf import settings
 
 from django.contrib import admin
 admin.autodiscover()
@@ -14,3 +15,10 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+urlpatterns += patterns(
+        'django.views.static',
+        (r'^media/(?P<path>.*)',
+        'serve',
+        {'document_root': settings.MEDIA_ROOT}),
+        )
