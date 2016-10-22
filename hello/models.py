@@ -16,3 +16,13 @@ class Beekeeper(models.Model):
     def __unicode__(self):
         return self.last_name
 
+class Hive(models.Model):
+    title = models.CharField(max_length=50)
+    subtitle = models.CharField(max_length=140)
+    thumbnail = ImageField(upload_to='hive_thumb', null=True, blank=True)
+    description = models.TextField(max_length=1000, null = True, blank=True)
+
+    def __unicode__(self):
+        return self.title
+
+

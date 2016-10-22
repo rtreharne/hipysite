@@ -1,4 +1,5 @@
 from django.conf.urls import include, url, patterns
+from django.conf.urls.static import static
 from django.conf import settings
 
 from django.contrib import admin
@@ -14,11 +15,5 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += patterns(
-        'django.views.static',
-        (r'^media/(?P<path>.*)',
-        'serve',
-        {'document_root': settings.MEDIA_ROOT}),
-        )
