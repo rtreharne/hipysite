@@ -1,4 +1,5 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 # Create your models here.
 class Greeting(models.Model):
