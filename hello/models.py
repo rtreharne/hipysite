@@ -33,3 +33,11 @@ class Event(models.Model):
 
     def __unicode__(self):
         return self.hive.title
+
+class Sponsor(models.Model):
+    title = models.CharField(max_length=25)
+    logo = models.ImageField(upload_to='logo', null=True, blank=True)
+    url = models.URLField(null=True)
+
+    def __unicode__(self):
+        return self.title
