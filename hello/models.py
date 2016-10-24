@@ -49,5 +49,3 @@ class Registration(models.Model):
     last_name = models.CharField(max_length=25)
     email = models.EmailField()
 
-    class Meta:
-        unique_together = ('event', 'email')
