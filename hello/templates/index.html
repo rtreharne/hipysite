@@ -121,7 +121,7 @@
                         </br>
                         <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
                         <p style="font-size: 0.95em;">{{event.location}}
-                        <p style="text-align: right"><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
+                        <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
                     </div>
                     <a href="/register/{{ event.id }}">
                         <div class="signup">
