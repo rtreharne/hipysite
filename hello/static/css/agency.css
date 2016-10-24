@@ -609,6 +609,16 @@ section#contact :-ms-input-placeholder {
 section#contact .text-danger {
   color: #e74c3c;
 }
+
+section#register {
+  background-color: #222222;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#register .section-heading {
+  color: white;
+}
 footer {
   padding: 25px 0;
   text-align: center;

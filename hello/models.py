@@ -30,6 +30,7 @@ class Event(models.Model):
     start_time = models.DateTimeField()
     finish_time = models.DateTimeField(null=False)
     location = models.CharField(max_length=50)
+    registrations = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.hive.title
@@ -41,3 +42,9 @@ class Sponsor(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Registration(models.Model):
+    event = models.ForeignKey(Event)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    email = models.EmailField(unique=True)
