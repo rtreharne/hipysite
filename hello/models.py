@@ -47,4 +47,7 @@ class Registration(models.Model):
     event = models.ForeignKey(Event)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
+
+    class Meta:
+        unique_together = ('event', 'email')
