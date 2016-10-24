@@ -18,3 +18,14 @@ form#registrationForm div li {
     max-width: 500px;
     margin: 0px auto;
 }
+p.contact-icons a {
+    color:white;
+    margin: 0 25px;
+}
+p.contact-icons a:hover {
+    color: #fed136;
+}
+div.about p {
+    font-size: 1.2em;
+    line-height: 2em;
+}
