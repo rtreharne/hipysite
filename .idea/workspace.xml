@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1ff09b9b-51a8-4bfb-b30a-4d982d3dd63a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/startbootstrap-agency" afterPath="$PROJECT_DIR$/hello/static/startbootstrap-agency" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/models.py" afterPath="$PROJECT_DIR$/hello/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/css/agency.css" afterPath="$PROJECT_DIR$/hello/static/css/agency.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/views.py" afterPath="$PROJECT_DIR$/hello/views.py" />
     </list>
     <ignored path="python-getting-started.iws" />
     <ignored path=".idea/workspace.xml" />
