@@ -260,12 +260,18 @@
                         <h4>{{beekeeper.first_name}} {{beekeeper.last_name}}</h4>
                         <br/>
                         <ul class="list-inline social-buttons">
+                            {% if beekeeper.twitter %}
                             <li><a href="{{beekeeper.twitter}}"><i class="fa fa-twitter"></i></a>
                             </li>
+                            {% endif %}
+                            {% if beekeeper.facebook %}
                             <li><a href="{{beekeeper.facebook}}"><i class="fa fa-facebook"></i></a>
                             </li>
+                            {% endif %}
+                            {% if beekeeper.linkeIn %}}
                             <li><a href="{{beekeeper.linkedIn}}"><i class="fa fa-linkedin"></i></a>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

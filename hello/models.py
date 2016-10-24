@@ -8,9 +8,9 @@ class Greeting(models.Model):
 class Beekeeper(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    twitter = models.URLField(null=True)
-    facebook = models.URLField(null=True)
-    linkedIn = models.URLField(null=True)
+    twitter = models.URLField(null=True, blank=True)
+    facebook = models.URLField(null=True, blank=True)
+    linkedIn = models.URLField(null=True, blank=True)
     thumbnail = ImageField(upload_to='beekeeper_thumb', null=True, blank=True)
 
     def __unicode__(self):

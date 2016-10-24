@@ -32,6 +32,7 @@ def register(request, hive_id=1):
             reg.save()
             registrations += 1
             event.registrations = registrations
+
             event.save()
 
             return HttpResponseRedirect('/#portfolio')
