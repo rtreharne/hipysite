@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ff09b9b-51a8-4bfb-b30a-4d982d3dd63a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/startbootstrap-agency" afterPath="$PROJECT_DIR$/hello/static/startbootstrap-agency" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="python-getting-started.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,8 +117,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="270" column="50" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
+            <state relative-caret-position="113">
+              <caret line="262" column="37" selection-start-line="262" selection-start-column="31" selection-end-line="262" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
@@ -163,8 +163,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="-4" />
+    <option name="x" value="1421" />
+    <option name="y" value="764" />
     <option name="width" value="1311" />
     <option name="height" value="772" />
   </component>
@@ -355,7 +355,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
+    <frame x="1421" y="764" width="1311" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4456522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -398,7 +398,7 @@
         <state relative-caret-position="270">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -488,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="270" column="50" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
+        <state relative-caret-position="113">
+          <caret line="262" column="37" selection-start-line="262" selection-start-column="31" selection-end-line="262" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
