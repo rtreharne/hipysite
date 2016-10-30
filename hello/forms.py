@@ -26,3 +26,10 @@ class RegistrationForm(forms.ModelForm):
             attrs={'class': 'form-control', 'placeholder': 'Email'}
         )
     )
+
+    depatment = forms.CharField(
+        label="",
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'UoL Department / Organisation Name'}
+        )
+    )

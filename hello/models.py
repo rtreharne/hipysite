@@ -47,5 +47,6 @@ class Registration(models.Model):
     event = models.ForeignKey(Event)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
+    department = models.CharField(max_length=25)
     email = models.EmailField()
 
