@@ -116,8 +116,8 @@
             <div class="row">
 
                 {% for event in events %}
-                <div id="port_{{forloop.counter}}"class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal{{forloop.counter}}" class="portfolio-link" data-toggle="modal">
+                <div id="port_{{ event.id }}"class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -329,7 +329,7 @@
 
     <!-- Portfolio Modal 1 -->
     {% for event in events %}
-    <div class="portfolio-modal modal fade" id="portfolioModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ event.id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -340,24 +340,67 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-lg-6 col-lg-offset-3">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
                                 <h2>{{ event.hive.title}}</h2>
                                 <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
                                 <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
                                 <p style="font-size: 1em;">{{event.location}}</p>
-
-                                </div>
-                                <img class="img-responsive img-centered" src="{{event.hive.thumbnail.url}}" alt="">
-                                {{ event.hive.description|safe }}
-                                <p>Like with all of our Hives, don't feel like you have to follow our script. If you just want to come and hang out and talk about Python then that's fine. Better still, if you're working on some gritty scripts at the moment for a cool application then we want you to tell us about it!</p><p><strong>Come All. Learn Python.</strong></p>
-                                <p><i class="fa fa-users fa-3"></i> {{ event.registrations }}</p>
-                                <a href="/register/{{event.hive.id}}">
+                                <a href="/register/{{event.id}}">
                                     <div class="signup">
                                         <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
                                     </div>
                                 </a>
+
+                                <img class="img-responsive img-centered" src="{{event.hive.thumbnail.url}}" alt="">
+                                {{ event.hive.description|safe }}
+                                <p>Like with all of our Hives, don't feel like you have to follow our script. If you just want to come and hang out and talk about Python then that's fine. Better still, if you're working on some gritty scripts at the moment for a cool application then we want you to tell us about it!</p><p><strong>Come All. Learn Python.</strong></p>
+                                <p><i class="fa fa-users fa-3"></i> {{ event.registrations }}</p>
+                                <br/>
+                                <h3>Resources</h3>
+                                <p>
+                                    <ul style="text-align: left">
+                                    {% for resource in resources %}
+                                        {% if resource.hive = event.hive %}
+                                        <li><a href="{{resource.link}}" target="_blank">{{resource.description}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+                                <br/>
+                                <h3>Playlist</h3>
+                                <p>
+                                    <ol style="text-align: left;">
+                                    {% for registration in registrations %}
+                                        {% if registration.song %}
+                                        {% if registration.event = event %}
+                                        <li>{{ registration.song }}</li>
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ol>
+                                </p>
+                                <br/>
+
+                                <h3>Bees</h3>
+                                <p>
+                                    <ul style="text-align:left; list-style:none;">
+                                    {% for registration in registrations %}
+                                        {% if registration.event = event %}
+
+                                        <li>
+                                            {% if registration.profile %}
+                                            <a href="{{ registration.profile }}" target="_blank">{{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}</a>
+                                            {% else %}
+                                            {{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}
+                                            {% endif %}
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>

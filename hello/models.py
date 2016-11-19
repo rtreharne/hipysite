@@ -1,5 +1,6 @@
 from django.db import models
 from sorl.thumbnail import ImageField
+from datetime import datetime
 
 # Create your models here.
 class Greeting(models.Model):
@@ -44,9 +45,21 @@ class Sponsor(models.Model):
         return self.title
 
 class Registration(models.Model):
+
     event = models.ForeignKey(Event)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     department = models.CharField(max_length=25)
     email = models.EmailField()
+    profile = models.URLField(null=True, blank=True)
+    song = models.CharField(max_length=50, blank=True)
+    timestamp = models.DateTimeField(default=datetime.now())
+
+class Resource(models.Model):
+    hive = models.ForeignKey(Hive)
+    description = models.CharField(max_length=50)
+    link = models.URLField(null=True, blank=True)
+
+    def __unicode__(self):
+        return self.description
 

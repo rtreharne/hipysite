@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Greeting, Beekeeper, Hive, Event, Sponsor, Registration
+from .models import Greeting, Beekeeper, Hive, Event, Sponsor, Registration, Resource
 from datetime import datetime
 from hello.forms import RegistrationForm
 from django.http import HttpResponseRedirect
@@ -18,11 +18,20 @@ def index(request):
     hives = Hive.objects.all()
     events = []
     events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
+    registrations = []
+    registrations = Registration.objects.all().order_by('last_name')
+    resources = []
+    resources = Resource.objects.all()
     event_sub = events[:min(len(events), 3)]
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     
-    return render(request, 'index.html', {'hives': hives, 'events': event_sub, 'beekeepers': beekeepers, 'sponsors': sponsors})
+    return render(request, 'index.html', {'hives': hives,
+                                          'events': event_sub,
+                                          'beekeepers': beekeepers,
+                                          'sponsors': sponsors,
+                                          'registrations': registrations,
+                                          'resources': resources})
 
 def register(request, hive_id=1):
 
