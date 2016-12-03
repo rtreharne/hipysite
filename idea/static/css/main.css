@@ -59,7 +59,9 @@ body {
 }
 
 div.idea-jumbo {
-    width: 100%;
+    width: 98%;
+    margin:0;
+    padding:0;
     min-height: 100%;
     min-height: 100vh;
     display: flex;
@@ -83,6 +85,10 @@ div.idea-jumbo {
 
 .btn-primary:hover {
   background: #CF4647;
+}
+
+.logo-box {
+    text-align: center;
 }
 
 .friend-logo {
