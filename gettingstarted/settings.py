@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'hello',
     'sorl.thumbnail',
     'storages',
+    'idea',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,0 +1,54 @@
+{% extends "idea-base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="idea-jumbo">
+    <div class="row">
+        <div class="col-md-6">
+            <div style="">
+                <p style="font-family: Roboto; font-size: 2em; color:white;">
+
+                </p>
+                <p class="title-font-top lv" style="margin:-0px auto; transform: rotate(-10deg);width:355px; margin-bottom: -50px;">liv</p>
+                <div style="height: 160px; width:315px; margin: 0 auto;">
+                     <p class="title-font element">&#x00c6</p>
+                     <p class="title-font element">&#x00c6</p>
+                     <p class="title-font element">&#x00c6</p>
+                     <p class="title-font element">&#x00c6</p>
+                </div>
+                <div style="height: 160px; width:315px; margin: -160px auto;">
+                      <p class="title-font element1" style="color:white;"></p>
+                      <p class="title-font element2" style="color:white;"></p>
+                      <p class="title-font element3" style="color:white;"></p>
+                      <p class="title-font element4" style="color:white;"></p>
+                    <p style="font-family: Roboto; font-size: 2em; color:white;" class="subtitle">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p style="font-family: Roboto; font-size: 2em; color:white; margin: 5%;">
+                <u>livIDEA</u> is a new thingy and these words are being used to describe how awesome it is.
+            </p>
+            <p style="font-family: Roboto; font-size: 2em; color:white; margin: 5%; font-weight:200;">
+                It'll be up to Ben to write these awesome words. Rob can't be arsed. He's got other shizzle to take care of today.
+            </p>
+            <p><button type="button" class="btn btn-primary">Tell me more.</button></p>
+        </div>
+        <div class="col-md-12">
+            <hr style="margin: 1% 5%;">
+            <p style="font-family: Roboto; font-weight:100; font-size: 1.5em; color:white; margin: 0 5%; margin-top: 0">We get by with a little help from our friends ...</p>
+            <p style="margin: 0 auto; width:100%; text-align: center;">
+                <img class="friend-logo" src="{% static 'img/liverpool.png' %}">
+                <img class="friend-logo" src="{% static 'img/hipy_logo.png' %}">
+                <img class="friend-logo" src="{% static 'img/rf.png' %}">
+                <img class="friend-logo" src="{% static 'img/cdtpv.png' %}">
+                <img class="friend-logo" src="{% static 'img/brothers.png' %}">
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: alarm;
+    src: url(../fonts/alarm.ttf);
+}
+
+@font-face {
+    font-family: mountains;
+    src: url(../fonts/beyond_the_mountains.ttf);
+}
+
+
+.title-font {
+    font-family: alarm;
+}
+.title-font-top {
+    font-family: mountains;
+    color: white;
+    font-size: 6em;
+    margin: 0 -30px;
+    margin-bottom: 10px;
+}
+
+.typed-cursor{
+    opacity: 0;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    display: none;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+p.title-font {
+    font-size: 10em;
+    margin:0;
+    width: 75px;
+    display: inline-block;
+}
+
+.element {
+    color:#53AEFF;
+}
+
+body {
+    background-color: #40A5FF;
+}
+
+div.idea-jumbo {
+    width: 100%;
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.btn-primary {
+    background: #428BCA;
+    color: #fff;
+    font-family: Roboto, Sans-serif;
+    font-size: 20px;
+    line-height: 60px;
+    margin: 5%;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+    font-size: 1.5em;
+}
+
+
+.btn-primary:hover {
+  background: #CF4647;
+}
+
+.friend-logo {
+    max-height: 50px;
+    margin: 2%;
+}

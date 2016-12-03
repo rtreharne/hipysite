@@ -6,6 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
+import idea.views
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
@@ -13,6 +14,7 @@ import hello.views
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
+    url(r'^idea/$', idea.views.idea, name='idea'),
     url(r'^register/(?P<hive_id>\d+)$', hello.views.register, name='register'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
