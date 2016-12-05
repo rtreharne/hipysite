@@ -43,6 +43,7 @@ class RegistrationForm(forms.ModelForm):
             ("Mathematics", "Mathematical Sciences"),
             ("Physics", "Physics"),
             ("Astrophysics", "Astrophysics"),
+            ("Stephenson Institute", "Stephenson Institute"),
             ("External", "External Group/Business/Organisation"),
             ("Other", "Other")
         ],
