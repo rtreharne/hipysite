@@ -38,6 +38,7 @@ class RegistrationForm(forms.ModelForm):
             ("Earth, Ocean, Ecology", "Earth, Ocean & Ecological Sciences"),
             ("EEE", "Electrical Engineering and Electronics"),
             ("Engineering", "Engineering"),
+            ("Geography and Planning", "Geography and Planning"),
             ("Geology", "Geology"),
             ("Mathematics", "Mathematical Sciences"),
             ("Physics", "Physics"),

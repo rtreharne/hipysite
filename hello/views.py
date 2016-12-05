@@ -6,7 +6,6 @@ from hello.forms import RegistrationForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-#TODO: create pre-register check function
 def regCheck(event, registration):
     if Registration.objects.filter(email=registration.email, event=event):
         return True
@@ -22,7 +21,7 @@ def index(request):
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
     resources = Resource.objects.all()
-    event_sub = events[:min(len(events), 3)]
+    event_sub = events[:min(len(events), 6)]
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     
