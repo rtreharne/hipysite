@@ -54,6 +54,20 @@
                                         {% endif %}
                                     {% endfor %}
                                     </ul>
+                                    <ul style="text-align:left; list-style:none;">
+                                    {% for registration in registrations %}
+                                        {% if registration.event = event %}
+
+                                        <li>
+                                            {% if registration.profile %}
+                                            <a href="{{ registration.profile }}" target="_blank">{{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}</a>
+                                            {% else %}
+                                            {{ registration.email }}
+                                            {% endif %}
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
                                 </p>
                                 <h3>Playlist</h3>
                                 <p>
