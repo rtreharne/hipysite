@@ -36,6 +36,8 @@ def index(request):
 
 def hive(request, hive_id=1):
     event = Event.objects.get(id=hive_id)
+    registrations = Registration.objects.all().order_by('last_name')
+    resources = Resource.objects.all()
 
     return render(request, 'hive.html', {'event': event,
                                          'registrations': registrations,
