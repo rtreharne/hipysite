@@ -32,6 +32,8 @@ class Event(models.Model):
     finish_time = models.DateTimeField(null=False)
     location = models.CharField(max_length=50)
     registrations = models.IntegerField(default=0)
+    stats = models.ImageField(upload_to='stats', null=False, blank=True)
+    photos = models.URLField(blank=True, null=False)
 
     def __unicode__(self):
         return self.hive.title

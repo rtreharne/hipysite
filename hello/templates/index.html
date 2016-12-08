@@ -143,6 +143,12 @@
                     </a>
                 </div>
                 {% endfor %}
+                <div class="col-md-8 col-md-offset-2" style="text-align:center;">
+                    <h3 class="section-heading"> Previous Hives</h3>
+                    {% for pevent in past_events %}
+                    <p><a href="hive/{{ pevent.id }}" target="_blank">{{ pevent.hive.title }}</a>, {{pevent.start_time|date:"D d M Y"}}, {{ pevent.location }} | <i class="fa fa-users" aria-hidden="true"></i> {{ pevent.registrations }}</p>
+                    {% endfor %}
+                </div>
 
             </div>
         </div>

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div id="portfolioModal{{ event.id }}">
+        <div class="">
+            <div class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>{{ event.hive.title}}</h2>
+                                <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
+                                <p><strong>{{event.start_time|date:"D d M Y"}}</strong></p>
+                                <p style="font-size: 1em;">{{event.location}}</p>
+                                <p><i class="fa fa-users fa-3"></i> {{ event.registrations }}</p>
+
+
+                                <h3>Resources</h3>
+                                <p>
+                                    <ul style="text-align: left">
+                                    {% for resource in resources %}
+                                        {% if resource.hive = event.hive %}
+                                        <li><a href="{{resource.link}}" target="_blank">{{resource.description}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+                                <p><h3>Event Stats</h3>
+                                {% if event.stats %}
+                                <img class="stats-img" src="event.stats.url">
+                                {% endif %}
+                                </p>
+                                <p><h3>Photos</h3>
+                                {% if event.photos %}
+                                <ul><li><a href="{{ event.photos }}" target="_blank">Link to Photo Album</a></li></ul>
+                                {% endif %}
+                                </p>
+                                <h3>Bees</h3>
+                                <p>
+                                    <ul style="text-align:left; list-style:none;">
+                                    {% for registration in registrations %}
+                                        {% if registration.event = event %}
+
+                                        <li>
+                                            {% if registration.profile %}
+                                            <a href="{{ registration.profile }}" target="_blank">{{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}</a>
+                                            {% else %}
+                                            {{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}
+                                            {% endif %}
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+                                <h3>Playlist</h3>
+                                <p>
+                                    <ol style="text-align: left;">
+                                    {% for registration in registrations %}
+                                        {% if registration.song %}
+                                        {% if registration.event = event %}
+                                        <li>{{ registration.song }}</li>
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ol>
+                                </p>
+                                <br/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

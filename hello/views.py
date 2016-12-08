@@ -17,6 +17,7 @@ def index(request):
     hives = Hive.objects.all()
     events = []
     events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
+    past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')
     registrations = []
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
@@ -30,7 +31,14 @@ def index(request):
                                           'beekeepers': beekeepers,
                                           'sponsors': sponsors,
                                           'registrations': registrations,
-                                          'resources': resources})
+                                          'resources': resources,
+                                          'past_events': past_events,})
+
+def hive(request, hive_id=1):
+    event = Event.objects.get(id=hive_id)
+
+    return render(request, 'hive.html', {'event': event})
+
 
 def register(request, hive_id=1):
 
