@@ -34,6 +34,7 @@ class Event(models.Model):
     registrations = models.IntegerField(default=0)
     stats = models.ImageField(upload_to='stats', null=False, blank=True)
     photos = models.URLField(blank=True, null=False)
+    playlist = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
         return self.hive.title
