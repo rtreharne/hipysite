@@ -1,0 +1,95 @@
+{% extends "promo_base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<div style="height: 100vh;
+            min-height: 100%;
+            display:flex;
+            align-items:
+            center;
+            background: #fff"
+     class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                {% for event in events %}
+                {% if forloop.counter == 1 %}
+                    <div class="item active">
+                {% else %}
+                    <div class="item">
+                {% endif %}
+
+                        <div style="text-align: right" class="col-md-1">
+                            <img style="max-width: 100px;" src="{% static 'img/hipy.png' %}" />
+                        </div>
+                        <div style="text-align: center;" class="col-md-10">
+                            <h1>{{ event.hive.title }}</h1>
+                            <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                            <p>{{event.location}}</p>
+                        </div>
+
+                        <div id="port_{{ event.id }}"class="col-md-10 col-md-offset-1">
+                            <div class="col-md-6">
+                                <img src="{{event.hive.thumbnail.url}}" class="img-responsive" alt="">
+                                <br />
+                                <p class="text-muted">{{ event.hive.subtitle }}</p>
+                                <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                {{ event.hive.description|safe }}
+                                <h3><a href="http://hipy.uk"><i class="fa fa-globe fa-1x"></i> hipy.uk</a></h3>
+                                <h3><a href="http://twitter.com/hipyliv"><i class="fa fa-twitter fa-1x"></i> @hipyliv</a></h3>
+                            </div>
+                        </div>
+                </div>
+
+
+
+    {% endfor %}
+    </div>
+
+
+
+
+  </div>
+
+  <!-- Left and right controls -->
+
+</div>
+
+
+
+                <!--
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 6000
+    });
+
+    $('.carousel').carousel('cycle');
+});
+</script>
+
+{% endblock content %}

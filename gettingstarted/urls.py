@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'^hive/(?P<hive_id>\d+)$', hello.views.hive, name='hive'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'promo/$', hello.views.promo, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -34,6 +34,11 @@ def index(request):
                                           'resources': resources,
                                           'past_events': past_events,})
 
+def promo(request):
+    now = datetime.now()
+    events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
+    return render(request, 'promo.html', {'events': events})
+
 def hive(request, hive_id=1):
     event = Event.objects.get(id=hive_id)
     registrations = Registration.objects.all().order_by('last_name')
