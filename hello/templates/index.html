@@ -11,7 +11,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" style:"font-family: 'Montserrat', sans-serif;" href="#page-top">HiPy</a>
+                <a class="navbar-brand page-scroll" style="font-family: 'Montserrat', sans-serif;" href="#page-top">HiPy</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,6 +40,14 @@
     </nav>
 
     <!-- Header -->
+
+<div class="video-background">
+    <div class="video-foreground">
+      <iframe id="myVideo" src="https://www.youtube.com/embed/zJRNT9Nmgtg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
     <header>
         <div class="container">
             <div class="intro-text">
@@ -155,7 +163,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section style="background:#fff" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -421,7 +429,15 @@
     </div>
     {% endfor %}
 
+<!-- mute sound on video -->
+
+
 {% endblock %}
+
+<script>
+var myVideo =  iframe.getElementById('myVideo');
+myVideo.mute();
+</script>
 
 
 
