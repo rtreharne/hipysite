@@ -9,6 +9,329 @@
         align-items: center;
 </style>
 
+ <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" style="font-family: 'Montserrat', sans-serif;" href="#page-top">HiPy</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Hives</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+
+<div class="video-background">
+    <div class="video-foreground">
+      <iframe id="myVideo" src="https://www.youtube.com/embed/zJRNT9Nmgtg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">Join the Hive</div>
+                <div class="intro-lead-in">For communities of students who want to learn Python.</div>
+                <br/>
+                <a href="#portfolio" class="page-scroll btn btn-xl">Tell Me More</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Hives</h2>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-md-8 col-md-offset-2 about">
+                    <p>You can sign up now for any of our upcoming Hives. Each hive has some overarching theme but
+                        there'll generally be lots of other cool Python related stuff going on simultaneously. All of our Hives
+                        are designed to cater for every level of ability and we rely heavily on those who know Python to help out
+                        and pass on their valuable knowledge to others.
+                    </p>
+
+                    </br>
+                    </br>
+
+                </div>
+             </div>
+            <div class="row">
+
+                {% for event in events %}
+                <div id="port_{{ event.id }}"class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{event.hive.thumbnail.url}}" class="img-responsive" alt="">
+
+
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{ event.hive.title }}</h4>
+                        <p class="text-muted">{{ event.hive.subtitle }}</p>
+                        </br>
+                        <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                        <p style="font-size: 0.95em;">{{event.location}}</p>
+                        </br>
+                        <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
+                    </div>
+                    <a href="/register/{{ event.id }}">
+                        <div class="signup">
+                            <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                <div class="col-md-8 col-md-offset-2" style="text-align:center;">
+                    <h3 class="section-heading"> Previous Hives</h3>
+                    {% for pevent in past_events %}
+                    <p><a href="hive/{{ pevent.id }}" target="_blank">{{ pevent.hive.title }}</a>, {{pevent.start_time|date:"D d M Y"}}, {{ pevent.location }} | <i class="fa fa-users" aria-hidden="true"></i> {{ pevent.registrations }}</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section style="background:#fff" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 about">
+                    <p>HiPy was started in July 2016 by a group of researchers within the Faculty of Science and
+                        Engineering at University of Liverpool. The intiative is a response to a large demand from
+                        undergraduates and staff to learn coding skills which are highly prized by employers. Our
+                        mission is simple:
+                    </p>
+                    <p><strong>Build an open, welcome community for <u>anyone</u> who wants to learn Python.</strong></p>
+                    <p>So, whether you're an absolute novice or seasoned hacker, if you're interested in Python
+                       come and join us. All of our events are free and everybody is welcome. <strong>Come All. Learn Python.</strong>
+                    </p>
+                    </br>
+                    <img style="width:100%;" src="{% static 'img/python_group.jpg' %}"/>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">The Beekeeper Team</h2>
+                    <br/>
+                    <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
+                </div>
+            </div>
+            <div class="row">
+                {% for beekeeper in beekeepers %}
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="{{beekeeper.thumbnail.url}}" class="img-responsive img-circle" alt="">
+                        <h4>{{beekeeper.first_name}} {{beekeeper.last_name}}</h4>
+                        <br/>
+                        <ul class="list-inline social-buttons">
+                            {% if beekeeper.twitter %}
+                            <li><a href="{{beekeeper.twitter}}"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            {% endif %}
+                            {% if beekeeper.facebook %}
+                            <li><a href="{{beekeeper.facebook}}"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            {% endif %}
+                            {% if beekeeper.linkedIn %}
+                            <li><a href="{{beekeeper.linkedIn}}"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">If you would like to become a beekeeper then get in touch. We are always very grateful for additional support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                {% for sponsor in sponsors %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="{{sponsor.url}}">
+                        <img style="max-width: 300px;" src="{{sponsor.logo.url}}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Got a question? Ask away.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="contact-icons" style="color:white; text-align: center;">
+                        <a href="mailto:hipyliv@gmail.com"><i class="fa fa-envelope fa-5x"></i></a>
+                        <a href="https://twitter.com/hipyliv"><i class="fa fa-twitter fa-5x"></i></a>
+                        <a href="https://facebook.com/hipyliv"><i class="fa fa-facebook fa-5x"></i></a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    {% for event in events %}
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ event.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>{{ event.hive.title}}</h2>
+                                <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
+                                <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                                <p style="font-size: 1em;">{{event.location}}</p>
+                                <a href="/register/{{event.id}}">
+                                    <div class="signup">
+                                        <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                                    </div>
+                                </a>
+
+                                <img class="img-responsive img-centered" src="{{event.hive.thumbnail.url}}" alt="">
+                                {{ event.hive.description|safe }}
+                                <p>Like with all of our Hives, don't feel like you have to follow our script. If you just want to come and hang out and talk about Python then that's fine. Better still, if you're working on some gritty scripts at the moment for a cool application then we want you to tell us about it!</p><p><strong>Come All. Learn Python.</strong></p>
+                                <p><i class="fa fa-users fa-3"></i> {{ event.registrations }}</p>
+                                <br/>
+                                <h3>Resources</h3>
+                                <p>
+                                    <ul style="text-align: left">
+                                    {% for resource in resources %}
+                                        {% if resource.hive = event.hive %}
+                                        <li><a href="{{resource.link}}" target="_blank">{{resource.description}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+                                <br/>
+                                {% if event.playlist %}
+                                <a href="{{ event.playlist }}" target="_blank"><h3>Playlist</h3></a>
+                                {% else %}
+                                <h3>Playlist</h3>
+                                {% endif %}
+                                <p>
+                                    <ol style="text-align: left;">
+                                    {% for registration in registrations %}
+                                        {% if registration.song %}
+                                        {% if registration.event = event %}
+                                        <li>{{ registration.song }}</li>
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ol>
+                                </p>
+                                <br/>
+
+                                <h3>Bees</h3>
+                                <p>
+                                    <ul style="text-align:left; list-style:none;">
+                                    {% for registration in registrations %}
+                                        {% if registration.event = event %}
+
+                                        <li>
+                                            {% if registration.profile %}
+                                            <a href="{{ registration.profile }}" target="_blank">{{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}</a>
+                                            {% else %}
+                                            {{ registration.first_name}} {{ registration.last_name }}, {{ registration.department }}
+                                            {% endif %}
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </p>
+
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+<!--
 <div class="container jumbotron-idea">
 
     <div class="row">
@@ -66,6 +389,6 @@
     </div>
     </div>
 </div>
-
+-->
 
 {% endblock %}

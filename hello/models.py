@@ -3,10 +3,18 @@ from sorl.thumbnail import ImageField
 from datetime import datetime
 
 # Create your models here.
+
+class Project(models.Model):
+    title = models.CharField(max_length=128)
+
+    def __unicode__(self):
+        return self.title
+
 class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
 class Beekeeper(models.Model):
+    project = models.ForeignKey(Project, blank=True, null=True)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     twitter = models.URLField(null=True, blank=True)
@@ -18,6 +26,7 @@ class Beekeeper(models.Model):
         return self.last_name
 
 class Hive(models.Model):
+    project = models.ForeignKey(Project, blank=True, null=True)
     title = models.CharField(max_length=50)
     subtitle = models.CharField(max_length=140)
     thumbnail = ImageField(upload_to='hive_thumb', null=True, blank=True)
@@ -65,4 +74,6 @@ class Resource(models.Model):
 
     def __unicode__(self):
         return self.description
+
+
 
