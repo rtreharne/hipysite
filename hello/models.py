@@ -44,6 +44,7 @@ class Event(models.Model):
     stats = models.ImageField(upload_to='stats', null=False, blank=True)
     photos = models.URLField(blank=True, null=False)
     playlist = models.URLField(null=True, blank=True)
+    max_reg = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
         return self.hive.title

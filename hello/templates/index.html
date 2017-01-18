@@ -105,11 +105,18 @@
                         </br>
                         <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
                     </div>
-                    <a href="/register/{{ event.id }}">
-                        <div class="signup">
-                            <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
-                        </div>
-                    </a>
+
+                        {% if event.max_reg < event.registrations %}
+                            <div class="signup">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
+                            </div>
+                        {% else %}
+                            <a href="/register/{{ event.id }}">
+                                <div class="signup">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                                </div>
+                            </a>
+                        {% endif %}
                 </div>
                 {% endfor %}
                 <div class="col-md-8 col-md-offset-2" style="text-align:center;">
@@ -257,11 +264,18 @@
                                 <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
                                 <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
                                 <p style="font-size: 1em;">{{event.location}}</p>
+                                {% if event.max_reg < event.registrations %}
+                                <div class="signup">
+                                        <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
+                                    </div>
+                                {% else %}
+
                                 <a href="/register/{{event.id}}">
                                     <div class="signup">
                                         <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
                                     </div>
                                 </a>
+                                {% endif %}
 
                                 <img class="img-responsive img-centered" src="{{event.hive.thumbnail.url}}" alt="">
                                 {{ event.hive.description|safe }}
