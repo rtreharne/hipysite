@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load thumbnail %}
 
 {% block content %}
 
@@ -92,7 +93,9 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{event.hive.thumbnail.url}}" class="img-responsive" alt="">
+                        {% thumbnail event.hive.thumbnail "600x400" crop="center" as im %}
+                        <img src="{{im.url}}" class="img-responsive" alt="">
+                        {% endthumbnail %}
                         
                          
                     </a>

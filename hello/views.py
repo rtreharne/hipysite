@@ -22,7 +22,7 @@ def index(request):
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
     resources = Resource.objects.all()
-    event_sub = events[:min(len(events), 3)]
+    event_sub = events[:min(len(events), 6)]
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     
