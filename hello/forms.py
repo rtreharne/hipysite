@@ -40,6 +40,7 @@ class RegistrationForm(forms.ModelForm):
             ("Engineering", "Engineering"),
             ("Geography and Planning", "Geography and Planning"),
             ("Geology", "Geology"),
+            ("Institute of Infection /  Global Health", "Institute of Infection / Global Health")
             ("Mathematics", "Mathematical Sciences"),
             ("Physics", "Physics"),
             ("Astrophysics", "Astrophysics"),
