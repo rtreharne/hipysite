@@ -18,7 +18,9 @@ def index(request):
     events = []
     events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
     past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')
-    registrations = []
+    registrations = Registration.objects.all()
+    email_list = set([x.email for x in registrations])
+    email_string = ",".join(email_list)
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
     resources = Resource.objects.all()
@@ -32,7 +34,8 @@ def index(request):
                                           'sponsors': sponsors,
                                           'registrations': registrations,
                                           'resources': resources,
-                                          'past_events': past_events,})
+                                          'past_events': past_events,
+                                          'emails': email_string})
 
 def promo(request):
     now = datetime.now()
