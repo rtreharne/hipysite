@@ -35,7 +35,8 @@ def index(request):
                                           'registrations': registrations,
                                           'resources': resources,
                                           'past_events': past_events,
-                                          'emails': email_string})
+                                          'emails': email_string,
+                                          'emails_len': len(email_list)})
 
 def promo(request):
     now = datetime.now()

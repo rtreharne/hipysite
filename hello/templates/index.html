@@ -132,7 +132,7 @@
 
                 {% if user.is_authenticated %}
                 <div class="col-lg-12 center" style="text-align: center;">
-                    <a href="mailto: {{ emails }}"><i class="fa fa-envelope fa-3x"></i></a>
+                    <a href="mailto: {{ emails }}"><i class="fa fa-envelope fa-3x"> {{ emails_len }}</i></a>
                 </div>
                 {% endif %}
 
