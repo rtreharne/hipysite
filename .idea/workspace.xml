@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff09b9b-51a8-4bfb-b30a-4d982d3dd63a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hello/migrations/0034_auto_20170119_2214.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/startbootstrap-agency" afterPath="$PROJECT_DIR$/hello/static/startbootstrap-agency" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/admin.py" afterPath="$PROJECT_DIR$/hello/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/models.py" afterPath="$PROJECT_DIR$/hello/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/css/agency.css" afterPath="$PROJECT_DIR$/hello/static/css/agency.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/static/css/style.css" afterPath="$PROJECT_DIR$/hello/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/register.html" afterPath="$PROJECT_DIR$/hello/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/views.py" afterPath="$PROJECT_DIR$/hello/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idea/static/css/main-idea.css" afterPath="$PROJECT_DIR$/idea/static/css/main-idea.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idea/templates/idea-base.html" afterPath="$PROJECT_DIR$/idea/templates/idea-base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idea/templates/idea.html" afterPath="$PROJECT_DIR$/idea/templates/idea.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idea/views.py" afterPath="$PROJECT_DIR$/idea/views.py" />
     </list>
     <ignored path="python-getting-started.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +35,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main-idea.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main-idea.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/idea/static/css/main-idea.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="150" column="12" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
+            <state relative-caret-position="248">
+              <caret line="260" column="34" selection-start-line="260" selection-start-column="34" selection-end-line="260" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello/static/css/agency.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="614" column="58" selection-start-line="614" selection-start-column="58" selection-end-line="614" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/idea/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="107" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="idea.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/idea/templates/idea.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="308" column="43" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <marker date="1485634539855" expanded="false" signature="6454:6472" ph="..." />
+                <marker date="1485634539855" expanded="false" signature="10862:10879" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="22" column="96" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -37,8 +104,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2412">
-              <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+            <state relative-caret-position="441">
+              <caret line="289" column="43" selection-start-line="278" selection-start-column="32" selection-end-line="289" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -50,73 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idea.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/templates/idea.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gettingstarted/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/templates/db.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="idea-base-old.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/templates/idea-base-old.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/static/css/agency.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="typed.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idea/static/js/typed.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+            <state relative-caret-position="-1008">
+              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -125,9 +130,11 @@
       <file leaf-file-name="idea-base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/idea/templates/idea-base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-              <folding />
+            <state relative-caret-position="63">
+              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,32 +147,33 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hello/static/css/agency.css" />
-        <option value="$PROJECT_DIR$/hello/templates/register.html" />
-        <option value="$PROJECT_DIR$/hello/admin.py" />
         <option value="$PROJECT_DIR$/hello/templates/hive.html" />
         <option value="$PROJECT_DIR$/hello/templates/promo_base.html" />
         <option value="$PROJECT_DIR$/gettingstarted/urls.py" />
         <option value="$PROJECT_DIR$/hello/templates/promo.html" />
-        <option value="$PROJECT_DIR$/hello/static/css/style.css" />
-        <option value="$PROJECT_DIR$/hello/models.py" />
         <option value="$PROJECT_DIR$/gettingstarted/settings.py" />
         <option value="$PROJECT_DIR$/hello/forms.py" />
         <option value="$PROJECT_DIR$/hello/templates/base.html" />
-        <option value="$PROJECT_DIR$/hello/views.py" />
-        <option value="$PROJECT_DIR$/hello/templates/index.html" />
-        <option value="$PROJECT_DIR$/idea/templates/idea.html" />
         <option value="$PROJECT_DIR$/idea/static/css/main.css" />
+        <option value="$PROJECT_DIR$/hello/models.py" />
+        <option value="$PROJECT_DIR$/hello/admin.py" />
+        <option value="$PROJECT_DIR$/hello/static/css/style.css" />
+        <option value="$PROJECT_DIR$/idea/views.py" />
+        <option value="$PROJECT_DIR$/hello/views.py" />
         <option value="$PROJECT_DIR$/idea/templates/idea-base.html" />
         <option value="$PROJECT_DIR$/idea/static/css/main-idea.css" />
+        <option value="$PROJECT_DIR$/hello/static/css/agency.css" />
+        <option value="$PROJECT_DIR$/hello/templates/register.html" />
+        <option value="$PROJECT_DIR$/hello/templates/index.html" />
+        <option value="$PROJECT_DIR$/idea/templates/idea.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="55" />
-    <option name="y" value="52" />
-    <option name="width" value="655" />
-    <option name="height" value="716" />
+    <option name="y" value="24" />
+    <option name="width" value="1311" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -330,7 +338,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="hello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gettingstarted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-getting-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gettingstarted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -502,16 +586,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="52" width="655" height="716" extended-state="4" />
+    <frame x="55" y="24" width="1311" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4841772" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23835404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31888545" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -559,13 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hello/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -755,27 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/static/css/agency.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="612" column="9" selection-start-line="612" selection-start-column="8" selection-end-line="612" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="80" selection-start-line="1" selection-start-column="80" selection-end-line="1" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/templates/promo_base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -811,24 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
@@ -847,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="38" column="71" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/idea/templates/db.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -868,16 +898,6 @@
         <state relative-caret-position="230">
           <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/templates/idea.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,10 +925,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/idea/templates/idea-base-old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1485622739526" expanded="true" signature="870:1231" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idea/templates/idea-base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idea/static/css/main-idea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="260" column="34" selection-start-line="260" selection-start-column="34" selection-end-line="260" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/static/css/agency.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="614" column="58" selection-start-line="614" selection-start-column="58" selection-end-line="614" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idea/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="96" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2412">
-          <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+        <state relative-caret-position="441">
+          <caret line="289" column="43" selection-start-line="278" selection-start-column="32" selection-end-line="289" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -919,27 +1027,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idea/templates/idea-base-old.html">
+    <entry file="file://$PROJECT_DIR$/idea/templates/idea.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/templates/idea-base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/static/css/main-idea.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="150" column="12" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="316">
+          <caret line="308" column="43" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1485634539855" expanded="false" signature="6454:6472" ph="..." />
+            <marker date="1485634539855" expanded="false" signature="10862:10879" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

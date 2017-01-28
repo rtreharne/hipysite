@@ -237,4 +237,29 @@ div.logo img {
     border-color: #2f9cc1;
 }
 
+#portfolio .portfolio-hover-idea {
+  background: rgba(0,251,255, 0.9) !important;
+}
+
+div.signup-idea {
+    background: #2f9cc1 !important;
+}
+div.signup-idea:hover {
+    background: rgb(0,251,255) !important;
+}
+.portfolio-item a {
+    text-decoration: none;
+}
+
+.modal-body a {
+    text-decoration: none;
+}
+
+section#contact {
+  background-image: none;
+}
 /* everything from here is HiPY */
+
+.contact-items a:hover {
+    color: rgb(0,251,255) !important;
+}

@@ -19,7 +19,8 @@
                     {% if submitted %}
                     <div class="text-center">
                         <p style="color: #d7d7d7;" class="item-intro text-muted">{{ submitted }}</p>
-                        <a href="/#portfolio">
+                        <a href="
+                        {% if event.hive.project.title == 'idea' %}/idea{% endif %}/#portfolio">
                         <button style="display:inherit; margin:0 auto;" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Return</button>
                         </a>
                      {% else %}
@@ -36,7 +37,8 @@
                     </form>
                     </br>
                     <div class="text-center">
-                        <a href="/#portfolio">
+                        <a href="
+                            {% if event.hive.project.title == 'idea' %}/idea{% endif %}/#portfolio">
                         <button style="display:inherit; margin:0 auto;" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
                         </a>
                     </div>

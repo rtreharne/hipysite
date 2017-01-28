@@ -4,6 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 
+
 class Project(models.Model):
     title = models.CharField(max_length=128)
 
@@ -75,6 +76,7 @@ class Resource(models.Model):
 
     def __unicode__(self):
         return self.description
+
 
 
 
