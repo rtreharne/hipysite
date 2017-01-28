@@ -146,7 +146,7 @@ div.center {
 }
 
 div.layer {
-    background: rgba(0, 184, 187, 1);
+    background: rgba(47, 146, 193, 1);
     top: 0;
     left: 0;
     width: 100%;
@@ -216,12 +216,12 @@ div.logo img {
 }
 
 .navbar-custom .navbar-toggle {
-    background-color: #00b8bb;
-    border-color: #00b8bb;
+    background-color: #2f9cc1;
+    border-color: #2f9cc1;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-     background-color: #37b79b;
+     background-color: #2f9cc1;
 }
 
 .navbar-custom .nav li a:hover,
@@ -230,11 +230,11 @@ div.logo img {
 }
 
 .page-scroll.btn.btn-xl, .btn.btn-xl {
-    color: #00b8bb;
+    color: #2f9cc1;
     margin-top: 20px;
     margin-bottom: 0;
     background-color: #fff;
-    border-color: #00b8bb;
+    border-color: #2f9cc1;
 }
 
 /* everything from here is HiPY */
