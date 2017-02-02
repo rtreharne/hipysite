@@ -14,6 +14,8 @@ def regCheck(event, registration):
 # Create your views here.
 def index(request):
     domain = request.META['HTTP_HOST']
+    if domain = 'www.lividea.org':
+        return HttpResponseRedirect('/idea/')
     print(domain)
     now = datetime.now()
     hives = Hive.objects.all()
