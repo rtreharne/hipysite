@@ -48,7 +48,7 @@
                                 <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
                             </div>
                             <div class="col-md-6">
-                                {{ event.hive.description|safe|truncatewords:50 }} ...
+                                {{ event.hive.description|safe|truncatewords:50 }}
                                 <h3><a href="http://hipy.uk"><i class="fa fa-globe fa-1x"></i> hipy.uk</a></h3>
                                 <h3><a href="http://twitter.com/hipyliv"><i class="fa fa-twitter fa-1x"></i> @hipyliv</a></h3>
                             </div>
@@ -85,7 +85,7 @@
 <script type="text/javascript">
 $(document).ready(function () {
     $('.carousel').carousel({
-        interval: 12000
+        interval: 12000;
     });
 
     $('.carousel').carousel('cycle');
