@@ -45,7 +45,7 @@ def index(request):
 def promo(request):
     now = datetime.now()
     events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
-    return render(request, 'promo.html', {'events': events})
+    return render(request, 'promo.html', {'events': events[:3]})
 
 def hive(request, hive_id=1):
     event = Event.objects.get(id=hive_id)
