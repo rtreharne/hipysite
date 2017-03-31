@@ -4,6 +4,22 @@
 
 {% block content %}
 
+
+
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+
  <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
@@ -141,7 +157,7 @@
             </div>
         </div>
     </section>
-
+    <a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
     <!-- About Section -->
     <section style="background:#fff" id="about">
         <div class="container">
@@ -362,15 +378,18 @@
     </div>
     {% endfor %}
 
-<!-- mute sound on video -->
-
 
 {% endblock %}
+
+
 
 <script>
 var myVideo =  iframe.getElementById('myVideo');
 myVideo.mute();
+
 </script>
+
+
 
 
 

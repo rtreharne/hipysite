@@ -20,7 +20,7 @@ def index(request):
     now = datetime.now()
     hives = Hive.objects.all()
     events = []
-    events = Event.objects.filter(hive__project__title='hipy', finish_time__gte=now).order_by('start_time')
+    events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
     past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')
     registrations = Registration.objects.all()
     email_list = set([x.email for x in registrations])
@@ -28,7 +28,7 @@ def index(request):
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
     resources = Resource.objects.all()
-    event_sub = events[:min(len(events), 6)]
+    event_sub = events[:min(len(events), 9)]
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     
