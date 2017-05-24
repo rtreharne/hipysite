@@ -298,7 +298,12 @@
                                     </div>
                                 {% else %}
 
+                                {% if event.signupURL %}
+                                <a href="event.signupURL" target="_blank">
+                                {% else %}
+
                                 <a href="/register/{{event.id}}">
+                                {% endif %}
                                     <div class="signup signup-{{event.hive.project.title}}">
                                         <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
                                     </div>
