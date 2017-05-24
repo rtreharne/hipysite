@@ -112,14 +112,14 @@
                         {% thumbnail event.hive.thumbnail "600x400" crop="center" as im %}
                         <img src="{{im.url}}" class="img-responsive" alt="">
                         {% endthumbnail %}
-                        
-                         
+
+
                     </a>
                     <div class="portfolio-caption">
                         <h4>{{ event.hive.title }}</h4>
                         <p class="text-muted">{{ event.hive.subtitle }}</p>
                         </br>
-                        <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                        <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f:iA"|lower}} - {{event.finish_time|date:"f:iA"|lower}}</strong></p>
                         <p style="font-size: 0.95em;">{{event.location}}</p>
                         </br>
                         <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
@@ -318,7 +318,6 @@
 
                                 <img class="img-responsive img-centered" src="{{event.hive.thumbnail.url}}" alt="">
                                 {{ event.hive.description|safe }}
-                                <p>Like with all of our Hives, don't feel like you have to follow our script. If you just want to come and hang out and talk about Python then that's fine. Better still, if you're working on some gritty scripts at the moment for a cool application then we want you to tell us about it!</p><p><strong>Come All. Learn Python.</strong></p>
                                 <p><i class="fa fa-users fa-3"></i> {{ event.registrations }}</p>
                                 <br/>
                                 <h3>Resources</h3>
@@ -399,8 +398,3 @@ var myVideo =  iframe.getElementById('myVideo');
 myVideo.mute();
 
 </script>
-
-
-
-
-

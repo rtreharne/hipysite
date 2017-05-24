@@ -64,7 +64,7 @@ class Registration(models.Model):
     event = models.ForeignKey(Event)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    department = models.CharField(max_length=25)
+    department = models.CharField(max_length=100)
     email = models.EmailField()
     profile = models.URLField(null=True, blank=True)
     song = models.CharField(max_length=50, blank=True)
@@ -77,7 +77,3 @@ class Resource(models.Model):
 
     def __unicode__(self):
         return self.description
-
-
-
-
