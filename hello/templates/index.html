@@ -295,7 +295,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>{{ event.hive.title}}</h2>
                                 <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
-                                <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                                <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f:iA"|lower}} until {{event.finish_time|date:"f:iA"|lower}}</strong></p>
                                 <p style="font-size: 1em;">{{event.location}}</p>
                                 {% if event.max_reg < event.registrations %}
                                 <div class="signup signup-{{event.hive.project.title}}">
