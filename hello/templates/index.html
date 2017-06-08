@@ -130,11 +130,16 @@
                                     <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
                             </div>
                         {% else %}
-                            <a href="/register/{{ event.id }}">
-                                <div class="signup signup-{{event.hive.project.title}}">
-                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
-                                </div>
-                            </a>
+                            {% if event.signupURL %}
+                                <a href="{{ event.signupURL }}" target="_blank">
+                            {% else %}
+                                <a href="/register/{{ event.id }}">
+                            {% endif %}
+                                    <div class="signup signup-{{event.hive.project.title}}">
+                                        <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                                    </div>
+                                </a>
+
                         {% endif %}
                 </div>
                 {% endfor %}
@@ -290,15 +295,21 @@
                                 <!-- Project Details Go Here -->
                                 <h2>{{ event.hive.title}}</h2>
                                 <p class="item-intro text-muted">{{event.hive.subtitle}}</p>
-                                <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f"}} p.m. until {{event.finish_time|date:"f"}} p.m.</strong></p>
+                                <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f:iA"|lower}} until {{event.finish_time|date:"f:iA"|lower}}</strong></p>
                                 <p style="font-size: 1em;">{{event.location}}</p>
                                 {% if event.max_reg < event.registrations %}
                                 <div class="signup signup-{{event.hive.project.title}}">
                                         <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
                                     </div>
                                 {% else %}
+                                <p></p>
+
+                                {% if event.signupURL %}
+                                <a href="{{ event.signupURL }}" target="_blank">
+                                {% else %}
 
                                 <a href="/register/{{event.id}}">
+                                {% endif %}
                                     <div class="signup signup-{{event.hive.project.title}}">
                                         <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
                                     </div>

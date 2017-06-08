@@ -46,6 +46,7 @@ class Event(models.Model):
     photos = models.URLField(blank=True, null=False)
     playlist = models.URLField(null=True, blank=True)
     max_reg = models.IntegerField(blank=True, null=True)
+    signupURL = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
         return self.hive.title
