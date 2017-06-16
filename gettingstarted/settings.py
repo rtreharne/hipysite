@@ -145,8 +145,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 AWS_STORAGE_BUCKET_NAME = 'hipy'
-AWS_ACCESS_KEY_ID = 'AKIAIMQ7GBMJRCAM3N3Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAIKRDZ7XXLOACPRGQ'
+AWS_SECRET_ACCESS_KEY = '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'
 
 # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
