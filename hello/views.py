@@ -21,7 +21,7 @@ def index(request):
     hives = Hive.objects.all()
     events = []
     events = Event.objects.filter(finish_time__gte=now).order_by('start_time')
-    past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')
+    past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')[:5]
     registrations = Registration.objects.all()
     email_list = set([x.email for x in registrations])
     email_string = ",".join(email_list)
