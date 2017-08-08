@@ -1,0 +1,10 @@
+{% extends "resources_base.html" %}
+
+{% block content %}
+    <h2>Modules</h2>
+    <ul>
+      {% for module in modules %}
+        <li><a href="{{ module.slug }}">{{ module }}</a></li>
+      {% endfor %}
+    </ul>
+{% endblock content %}

@@ -18,6 +18,7 @@ class Beekeeper(models.Model):
     project = models.ForeignKey(Project, blank=True, null=True)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
+    github = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     facebook = models.URLField(null=True, blank=True)
     linkedIn = models.URLField(null=True, blank=True)

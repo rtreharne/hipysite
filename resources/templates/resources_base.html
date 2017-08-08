@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <title>
+          HiPy - Resources
+      </title>
+  </head>
+
+  <body>
+    <h1>Resources</h1>
+    <hr>
+    {% if module %}
+    <p>
+        <a href="/resources/modules/">Modules</a>
+        |
+        <a href="/resources/modules/{{ module.slug }}">{{ module.title }}</a>
+        {% if element %}
+            |
+            <a href="/resources/modules/{{ module.slug }}/{{ element.slug }}">{{ element.title }}</a>
+        {% endif %}
+    </p>
+    <hr>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+
+  </body>
+</html>

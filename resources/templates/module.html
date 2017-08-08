@@ -1,0 +1,29 @@
+{% extends "resources_base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+    <h2>{{ module.title }}</h2>
+    {% thumbnail module.coordinator.thumbnail "200x200" crop="center" as im %}
+        <img src="{{im.url}}" class="img-responsive" alt="">
+    {% endthumbnail %}
+    <ul>
+        {% if module.coordinator.github %}
+            <li><a href="{{module.coordinator.github}}" target="_blank">GitHub</a></li>
+        {% endif %}
+        {% if module.coordinator.twitter %}
+            <li><a href="{{module.coordinator.twitter}}" target="_blank">Twitter</a></li>
+        {% endif %}
+        {% if module.coordinator.facebook %}
+            <li><a href="{{module.coordinator.facebook}}" target="_blank">Facebook</a></li>
+        {% endif %}
+        {% if module.coordinator.linkedIn %}
+            <li><a href="{{module.coordinator.linkedIn}}" target="_blank">LinkedIn</a></li>
+        {% endif %}
+    </ul>
+    <p>{{ module.description }}</p>
+    <ul>
+      {% for element in elements %}
+        <li><a href="{{ element.slug }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+{% endblock content %}

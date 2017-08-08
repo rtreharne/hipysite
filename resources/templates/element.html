@@ -1,0 +1,23 @@
+{% extends "resources_base.html" %}
+{% load static from staticfiles %}
+{% load thumbnail %}
+
+{% block content %}
+    <h2>{{ module.title }}</h2>
+    <h3>{{ element.title}}</h3>
+    <p>{{ element.description }}</p>
+    <p>
+        {% if element.github_link %}
+            <a href="{{ element.github_link }}">Jupyter Notebook</a>
+        {% endif %}
+        {% if element.azure_link %}
+            |
+            <a href="{{ element.azure_link }}">Azure Notebook</a>
+        {% endif %}
+    </p>
+    {% if element.video_link %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{element.video_link}}?ecver=1" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+
+
+{% endblock content %}
