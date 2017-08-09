@@ -7,7 +7,7 @@ def modules(request):
 
 def module(request, slug):
     module = Module.objects.filter(slug=slug)[0]
-    elements = Element.objects.filter(module=module)
+    elements = Element.objects.filter(module=module).order_by('-id')
     return render(request, 'module.html', {'module': module, 'elements': elements})
 
 

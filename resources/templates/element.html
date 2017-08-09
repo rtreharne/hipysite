@@ -2,22 +2,67 @@
 {% load static from staticfiles %}
 {% load thumbnail %}
 
+{% block head %}
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<meta name="twitter:card" content="player" />
+	<meta name="twitter:site" content="@rchoi" />
+	<meta name="twitter:title" content="Sample Player Card" />
+	<meta name="twitter:description" content="This is a sample video. When you implement, make sure all links are secure." />
+	<meta name="twitter:image" content="https://yoursite.com/example.png" />
+	<meta name="twitter:player" content="https://yoursite.com/container.html" />
+	<meta name="twitter:player:width" content="480" />
+	<meta name="twitter:player:height" content="480" />
+	<meta name="twitter:player:stream" content="https://youtu.be/PUKyH1RoEHM" />
+	<meta name="twitter:player:stream:content_type" content="video/mp4" />
+</head>
+{% endblock head %}
+
 {% block content %}
     <h2>{{ module.title }}</h2>
     <h3>{{ element.title}}</h3>
+
+
     <p>{{ element.description }}</p>
-    <p>
+    <ul>
         {% if element.github_link %}
-            <a href="{{ element.github_link }}">Jupyter Notebook</a>
+        <li><a href="{{ element.github_link }}" target="_blank">Jupyter</a></li>
         {% endif %}
         {% if element.azure_link %}
-            |
-            <a href="{{ element.azure_link }}">Azure Notebook</a>
+        <li><a href="{{ element.azure_link }}" target="_blank">Azure</a></li>
         {% endif %}
-    </p>
+        {% if element.cocalc_link %}
+        <li><a href="{{ element.cocalc_link }}" target="_blank">CoCalc</a></li>
+        {% endif %}
+    </ul>
     {% if element.video_link %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{element.video_link}}?ecver=1" frameborder="0" allowfullscreen></iframe>
     {% endif %}
+    {% if element.recommended %}
+    <h4>Recommended Pre-requisites</h4>
+    <ul>
+        {% for item in element.recommended.all %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <p>
+        {% if element.prev_item %}
+        <a href="/resources/modules/{{element.prev_item.module.slug}}/{{element.prev_item.slug }}">Previous</a>
+        |
+        {% endif %}
+        {% if element.next_item %}
+        <a href="/resources/modules/{{element.next_item.module.slug}}/{{element.next_item.slug}}">Next</a>
+        {% endif %}
+    </p>
+    <h4>Share</h4>
+    <ul>
+        <li><a href="https://twitter.com/share" class="twitter-share-button" data-text="Check this out!" data-via="HiPyLiv" data-hashtags="LearnPython">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+        <li>Facebook</li>
+        <li>Email</li>
+    </ul>
+
+
 
 
 {% endblock content %}

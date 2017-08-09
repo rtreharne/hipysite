@@ -22,7 +22,9 @@ class Element(models.Model):
     azure_link = models.URLField(null=True, blank=True)
     cocalc_link = models.URLField(null=True, blank=True)
     video_link = models.URLField(null=True, blank=True)
-
+    prev_item = models.ForeignKey("self", null=True, blank=True)
+    next_item = models.ForeignKey("self", null=True, blank=True, related_name='+')
+    recommended = models.ManyToManyField("self", null=True, blank=True)
 
     def __unicode__(self):
         return self.title
