@@ -31,6 +31,7 @@ class RegistrationForm(forms.ModelForm):
         choices=[
             ('', "Department"),
             ('', "----------"),
+            ("Alt-C Conference Delegate"),
             ("Architecture", "Architecture"),
             ("Astrophysics", "Astrophysics"),
             ("Biology", "Biology"),
