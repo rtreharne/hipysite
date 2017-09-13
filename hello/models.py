@@ -48,6 +48,7 @@ class Event(models.Model):
     playlist = models.URLField(null=True, blank=True)
     max_reg = models.IntegerField(blank=True, null=True)
     signupURL = models.URLField(null=True, blank=True)
+    flyer = models.ImageField(upload_to='flyers', null=False, blank=True)
 
     def __unicode__(self):
         return self.hive.title

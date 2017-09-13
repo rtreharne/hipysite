@@ -67,12 +67,18 @@
 
     <header>
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-heading">Join the Hive</div>
-                <div class="intro-lead-in">For communities of students who want to learn Python.</div>
-                <br/>
-                <a href="#portfolio" class="page-scroll btn btn-xl">Tell Me More</a>
+            <div class="col-lg-12">
+                <div class="intro-text">
+                    <div class="intro-heading">Join the Hive</div>
+                    <div class="intro-lead-in">For communities of students who want to learn Python.</div>
+                    <br/>
+                    <a href="#portfolio" class="page-scroll btn btn-xl">Tell Me More</a>
+                </div>
             </div>
+
+
+
+
         </div>
     </header>
 
@@ -102,7 +108,7 @@
             <div class="row">
 
                 {% for event in events %}
-                <div id="port_{{ event.id }}"class="col-md-6 col-sm-6 portfolio-item">
+                <div id="port_{{ event.id }}"class="col-md-4 col-sm-4 portfolio-item">
                     <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover portfolio-hover-{{event.hive.project.title}}">
                             <div class="portfolio-hover-content">

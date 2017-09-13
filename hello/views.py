@@ -31,6 +31,7 @@ def index(request):
     event_sub = events[:min(len(events), 9)]
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
+    next_hive = events[0]
     
     return render(request, 'index.html', {'hives': hives,
                                           'events': event_sub,
@@ -40,7 +41,8 @@ def index(request):
                                           'resources': resources,
                                           'past_events': past_events,
                                           'emails': email_string,
-                                          'emails_len': len(email_list)})
+                                          'emails_len': len(email_list),
+                                          'next_hive': next_hive})
 
 def promo(request):
     now = datetime.now()
