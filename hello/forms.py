@@ -89,9 +89,10 @@ class RegistrationForm(forms.ModelForm):
             ("Word of mouth", "Word of mouth"),
             ("Email", "Email"),
             ("UoL video screen", "UoL video screen"),
-            ("The Google Overlords", "The Google Overlords")
+            ("The Google Overlords", "The Google Overlods"),
             ("Other", "Other")
         ],
+        required=True,
         label="",
         widget=forms.Select(
             attrs={'class': 'form-control', 'placeholder': 'How did you hear about HiPy/LivIDEA?'}
