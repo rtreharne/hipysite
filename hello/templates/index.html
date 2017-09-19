@@ -128,7 +128,9 @@
                         <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"f:iA"|lower}} - {{event.finish_time|date:"f:iA"|lower}}</strong></p>
                         <p style="font-size: 0.95em;">{{event.location}}</p>
                         </br>
+                        {% if not event.signupURL %}
                         <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
+                        {% endif %}
                     </div>
 
                         {% if event.max_reg < event.registrations %}
