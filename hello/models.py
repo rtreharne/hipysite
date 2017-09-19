@@ -71,6 +71,7 @@ class Registration(models.Model):
     profile = models.URLField(null=True, blank=True)
     song = models.CharField(max_length=100, blank=True)
     timestamp = models.DateTimeField(default=datetime.now())
+    hear = models.CharField(max_length=1000, null=True, blank=True)
 
 class Resource(models.Model):
     hive = models.ForeignKey(Hive)

@@ -4,7 +4,7 @@ from hello.models import Registration
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Registration
-        fields = ('first_name', 'last_name', 'email', 'department', 'profile', 'song')
+        fields = ('first_name', 'last_name', 'email', 'department', 'profile', 'song', 'hear')
 
     first_name = forms.CharField(
         label="",
@@ -78,5 +78,22 @@ class RegistrationForm(forms.ModelForm):
         label="",
         widget=forms.TextInput(
             attrs={'class': 'form-control', 'placeholder': 'Song for Hive playlist (e.g. The Beatles, "Yellow Submarine")'}
+        )
+    )
+
+    hear = forms.ChoiceField(
+        choices=[
+            ("", "How did you hear about HiPy?"),
+            ('', "----------"),
+            ("Poster/Flyer", "Poster/Flyer"),
+            ("Word of mouth", "Word of mouth"),
+            ("Email", "Email"),
+            ("UoL video screen", "UoL video screen"),
+            ("The Google Overlords", "The Google Overlords")
+            ("Other", "Other")
+        ],
+        label="",
+        widget=forms.Select(
+            attrs={'class': 'form-control', 'placeholder': 'How did you hear about HiPy/LivIDEA?'}
         )
     )
