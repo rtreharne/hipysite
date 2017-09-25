@@ -1,9 +1,59 @@
 {% extends "resources_base.html" %}
 {% load thumbnail %}
 
-{% block title %}
-{{ module.title }}
-<hr>
+{% block content %}
+
+<section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8 text-center">
+                    <p>
+                        <a href="/">Home</a>
+                    </p>
+
+                    <h1>
+                        {{ module.title }}
+                    </h1>
+                    <br>
+                    <div class="col-md-8">
+            <p class="">{{ module.description }}</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="team-member">
+                {% thumbnail module.coordinator.thumbnail "150x150" crop="center" as im %}
+                    <img src="{{im.url}}" class="img-responsive img-circle" alt="">
+                {% endthumbnail %}
+                <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
+                <br/>
+                <ul class="list-inline social-buttons">
+                    {% if module.coordinator.github %}
+                    <li><a href="{{module.coordinator.github}}"><i class="fa fa-github"></i></a>
+                    </li>
+                    {% endif %}
+                    {% if module.coordinator.twitter %}
+                    <li><a href="{{module.coordinator.twitter}}"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    {% endif %}
+                    {% if module.coordinator.facebook %}
+                    <li><a href="{{module.coordinator.facebook}}"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    {% endif %}
+                    {% if module.coordinator.linkedIn %}
+                    <li><a href="{{module.coordinator.linkedIn}}"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </br>
+
+  </section>
+
+
 <div class="row">
                 <div class="col-md-8">
                     <p class="text-small">{{ module.description }}</p>
@@ -37,9 +87,8 @@
                     </div>
                 </div>
 </div>
-{% endblock title %}
 
-{% block content %}
+
 
     {% thumbnail module.coordinator.thumbnail "200x200" crop="center" as im %}
         <img src="{{im.url}}" class="img-responsive" alt="">

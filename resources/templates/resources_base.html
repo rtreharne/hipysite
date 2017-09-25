@@ -43,32 +43,7 @@
   </head>
 
   <body>
-  <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-offset-2 col-lg-8 text-center">
-                    <p>
-                        <a href="/">Home</a>
-                        {% if module %}
-                        |
-                        <a href="/resources/modules/">Modules</a>
-                        |
-                        <a href="/resources/modules/{{ module.slug }}">{{ module.title }}</a>
-                        {% if element %}
-                            |
-                            <a href="/resources/modules/{{ module.slug }}/{{ element.slug }}">{{ element.title }}</a>
-                        {% endif %}
-                        {% endif %}
-                    </p>
 
-                    <h1>
-                        {% block title %}
-                        {% endblock %}
-                    </h1>
-                </div>
-            </div>
-        </div>
-  </section>
 
     {% block content %}
     {% endblock content %}

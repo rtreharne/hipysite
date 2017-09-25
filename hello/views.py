@@ -5,6 +5,7 @@ from datetime import datetime
 from hello.forms import RegistrationForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from resources.models import *
 
 def regCheck(event, registration):
     if Registration.objects.filter(email=registration.email, event=event):
@@ -32,6 +33,8 @@ def index(request):
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     next_hive = events[0]
+    modules = Module.objects.all()
+
     
     return render(request, 'index.html', {'hives': hives,
                                           'events': event_sub,
@@ -42,7 +45,8 @@ def index(request):
                                           'past_events': past_events,
                                           'emails': email_string,
                                           'emails_len': len(email_list),
-                                          'next_hive': next_hive})
+                                          'next_hive': next_hive,
+                                          'modules': modules})
 
 def promo(request):
     now = datetime.now()
