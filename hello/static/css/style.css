@@ -103,3 +103,18 @@ div.signup-idea:hover {
 
 .modal-body a {
     text-decoration: none;
+}
+
+p.module-description {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.module-title {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

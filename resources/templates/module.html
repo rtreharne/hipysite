@@ -1,30 +1,35 @@
 {% extends "resources_base.html" %}
 {% load thumbnail %}
+{% load static from staticfiles %}
 
 {% block content %}
 
-<section id="portfolio" class="bg-light-gray">
+<section id="portfolio" class="bg-light-gray module-title">
         <div class="container">
             <div class="row">
-                <div class="col-lg-offset-2 col-lg-8 text-center">
-                    <p>
-                        <a href="/">Home</a>
-                    </p>
+                <div class="col-lg-offset-1 col-lg-10 text-center">
+                    <a href="http://www.hipy.uk"><img style="width: 80px" src="{% static 'img/hipy_logo_small.jpg' %}"/></a>
+
+                    <br>
+                    <br>
 
                     <h1>
                         {{ module.title }}
                     </h1>
                     <br>
                     <div class="col-md-8">
-            <p class="">{{ module.description }}</p>
+            <p class="module-description">{{ module.description }}</p>
         </div>
 
         <div class="col-md-4">
             <div class="team-member">
+                <h5>Module Coordinator</h5>
+                <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
+                <br>
                 {% thumbnail module.coordinator.thumbnail "150x150" crop="center" as im %}
                     <img src="{{im.url}}" class="img-responsive img-circle" alt="">
                 {% endthumbnail %}
-                <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
+
                 <br/>
                 <ul class="list-inline social-buttons">
                     {% if module.coordinator.github %}
