@@ -123,6 +123,10 @@ def deregister(request, event_id=1):
 def register(request, hive_id=1):
 
     event = Event.objects.get(id=hive_id)
+
+    if event.finish_time < datetime.now():
+        return HttpResponseRedirect('/')
+
     registrations = event.registrations
     submitted = None
 
