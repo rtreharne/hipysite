@@ -14,6 +14,8 @@ import idea.views
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
+    url(r'^email-list/', hello.views.email_list, name='email-list'),
+    url(r'^event-data/(?P<event_id>\d+)$', hello.views.event_data, name='event-data'),
     url(r'^resources/', include('resources.urls')),
     url(r'^idea/$', idea.views.idea, name='idea'),
     url(r'^register/(?P<hive_id>\d+)$', hello.views.register, name='register'),

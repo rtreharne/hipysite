@@ -6,6 +6,37 @@ from hello.forms import RegistrationForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from resources.models import *
+import csv
+
+def email_list(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+    registrations = Registration.objects.all().order_by('last_name')
+    email_list = set([x.email for x in registrations])
+
+    writer = csv.writer(response)
+    for email in email_list:
+        print(email)
+        writer.writerow([email])
+
+    return response
+
+def event_data(request, event_id):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+    event = Event.objects.get(pk=event_id)
+
+    registrations = Registration.objects.filter(event=event).order_by('last_name')
+    email_list = set([x.email for x in registrations])
+
+    writer = csv.writer(response)
+    for reg in registrations:
+        writer.writerow([reg.last_name, reg.first_name, reg.email, reg.department, reg.hear])
+
+    return response
+
 
 def regCheck(event, registration):
     if Registration.objects.filter(email=registration.email, event=event):
@@ -25,7 +56,7 @@ def index(request):
     past_events = Event.objects.filter(finish_time__lte=now).order_by('-start_time')[:5]
     registrations = Registration.objects.all()
     email_list = set([x.email for x in registrations])
-    email_string = ",".join(email_list)
+    email_string = "\n".join(email_list)
     registrations = Registration.objects.all().order_by('last_name')
     resources = []
     resources = Resource.objects.all()
