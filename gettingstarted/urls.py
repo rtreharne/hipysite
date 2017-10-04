@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^resources/', include('resources.urls')),
     url(r'^idea/$', idea.views.idea, name='idea'),
     url(r'^register/(?P<hive_id>\d+)$', hello.views.register, name='register'),
+    url(r'^deregister/(?P<event_id>\d+)$', hello.views.deregister, name='deregister'),
     url(r'^hive/(?P<hive_id>\d+)$', hello.views.hive, name='hive'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),

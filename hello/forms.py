@@ -1,6 +1,14 @@
 from django import forms
 from hello.models import Registration
 
+class DeregistrationForm(forms.Form):
+    email = forms.CharField(
+        label="Email Address",
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Email'}
+        )
+    )
+
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Registration

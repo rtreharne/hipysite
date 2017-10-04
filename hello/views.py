@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Greeting, Beekeeper, Hive, Event, Sponsor, Registration, Resource
 from datetime import datetime
-from hello.forms import RegistrationForm
+from hello.forms import RegistrationForm, DeregistrationForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from resources.models import *
@@ -93,6 +93,31 @@ def hive(request, hive_id=1):
                                          'registrations': registrations,
                                          'resources': resources,
                                          })
+
+def deregister(request, event_id=1):
+    event = Event.objects.get(id=event_id)
+    submitted = None
+
+    if request.method == 'POST':
+        deregister_form = DeregistrationForm(data=request.POST)
+
+        if deregister_form.is_valid():
+            email = deregister_form.cleaned_data['email']
+            registrations = Registration.objects.filter(event=event, email=email)
+            for reg in registrations:
+                reg.delete()
+                event.registrations -= 1
+                event.save()
+            print(len(registrations))
+            submitted = "Sorry you can't make it thist time. Thanks for de-registering."
+            return render(request, 'deregister.html', {'event':event,'deregister_form': deregister_form, 'submitted':submitted})
+        else:
+            print deregister_form.errors
+    else:
+        deregister_form = DeregistrationForm
+
+    return render(request, 'deregister.html',
+                  {'deregister_form': deregister_form, 'event': event, 'submitted': submitted})
 
 
 def register(request, hive_id=1):

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <!-- Register Section -->
+    <section id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Deregister</h2>
+                    <h2 style="color: #d7d7d7;">{{ event.hive.title }}</h2>
+                    <p style="color: #d7d7d7;" class="item-intro text-muted">{{event.hive.subtitle}}</p>
+                    <br/>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if submitted %}
+                    <div class="text-center">
+                        <p style="color: #d7d7d7;" class="item-intro text-muted">{{ submitted }}</p>
+                        <a href="
+                        {% if event.hive.project.title == 'idea' %}/idea{% endif %}/#portfolio">
+                        <button style="display:inherit; margin:0 auto;" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Return</button>
+                        </a>
+                     {% else %}
+                    <form id="registrationForm" method="post" action="">
+                        {% csrf_token %}
+                        {% for field in deregister_form.visible_fields %}
+                        <div>
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                        {% endfor %}
+                        <br/>
+                        <input style="display:inherit; margin:0 auto;" type="submit" class="btn btn-xl" value="Deregister" />
+                    </form>
+                    </br>
+                    <div class="text-center">
+                        <a href="
+                            {% if event.hive.project.title == 'idea' %}/idea{% endif %}/#portfolio">
+                        <button style="display:inherit; margin:0 auto;" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                        </a>
+                    </div>
+                    {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

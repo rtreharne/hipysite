@@ -132,7 +132,7 @@
                         <p style="font-size: 0.95em;">{{event.location}}</p>
                         </br>
                         {% if not event.signupURL %}
-                        <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }}</p>
+                        <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }} / {{ event.max_reg }}</p>
                         {% else %}
                         <p><i style="color: white" class="fa fa-users" aria-hidden="true"></i>A HiPy Friends Event<i style="color: white" class="fa fa-users" aria-hidden="true"></i></p>
                         {% endif %}
