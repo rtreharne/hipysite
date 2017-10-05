@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load thumbnail %}
+
+{% block content %}
+<style>
+.legend rect {
+	fill:white;
+	opacity:0.4;
+}
+#ChartAccessAgesByCountD3 svg {
+    height:500px;
+    padding-top:50px;
+}
+.legend-items text {
+    cursor: default;
+}
+</style>
+
+
+
+<div id="ChartAccessAgesByCountD3" style="height:260px;" data-drilldown-destination="filelist_by_category" data-drilldown-key="atime" ></div>
+
+<script>
+
+
+
+
+</script>
+
+{% endblock %}
+
+
+
+

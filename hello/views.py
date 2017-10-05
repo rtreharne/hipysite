@@ -8,6 +8,9 @@ from django.core.urlresolvers import reverse
 from resources.models import *
 import csv
 
+def stats(request):
+    return render(request, 'stats.html', {})
+
 def email_list(request):
     # Create the HttpResponse object with the appropriate CSV header.
     response = HttpResponse(content_type='text/csv')
@@ -125,6 +128,9 @@ def register(request, hive_id=1):
     event = Event.objects.get(id=hive_id)
 
     if event.finish_time < datetime.now():
+        return HttpResponseRedirect('/')
+
+    if event.max_reg <= event.registrations:
         return HttpResponseRedirect('/')
 
     registrations = event.registrations

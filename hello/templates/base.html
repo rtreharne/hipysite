@@ -29,6 +29,9 @@
     <link href="{% static 'css/agency.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
+
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,6 +79,134 @@
 
     <!-- Theme JavaScript -->
     <script src="{% static 'js/agency.min.js' %}"></script>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <script>
+        var st = {};
+        st.data = [{
+        "label": "less than a week",
+        "value": 169,
+        "pos": 0
+    }, {
+        "label": "1 week - 30 days",
+        "value": 1,
+        "pos": 1
+    }, {
+        "label": "30 - 90 days",
+        "value": 22,
+        "pos": 2
+    }, {
+        "label": "90 - 180 days",
+        "value": 35,
+        "pos": 3
+    }, {
+        "label": "180 days - 1 year",
+        "value": 47,
+        "pos": 4
+    }, {
+        "label": "more than 1 year",
+        "value": 783,
+        "pos": 5
+    }];
+
+    drawD3PieChart("#ChartAccessAgesByCountD3", st.data);
+
+    function drawD3PieChart(sel, data) {
+        // clear any previously rendered svg
+        $(sel + " svg").remove();
+        // compute total
+        tot = 0;
+        data.forEach(function(e){ tot += e.value; });
+        var w = $(sel).width();
+        var h = $(sel).height();
+        var r = Math.min(w, h) /2;
+        var color = d3.scale.category20c();
+        var vis = d3.select(sel).append("svg:svg").attr("data-chart-context",sel).data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + (w / 2) + "," + r + ")");
+        var svgParent = d3.select("svg[data-chart-context='" + sel + "']");
+        var pie = d3.layout.pie().value(function(d){return d.value;});
+        var arc = d3.svg.arc().outerRadius(r);
+        var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class","slice");
+        arcs.append("svg:path")
+            .attr("fill", function(d, i) {
+                return color(i);
+            })
+            .attr("stroke", "#fff")
+            .attr("stroke-width", "0")
+            .attr("d", function(d) {
+                return arc(d);
+            })
+            .attr("data-legend",function(d) { return d.data.label; })
+            .attr("data-legend-pos",function(d) { return d.data.pos; })
+            .classed("slice",true)
+            .attr("style","cursor:pointer;")
+            .append("svg:title")
+               .text(function(d) { return d.data.label; });
+
+        arcs.append("svg:text").attr("transform", function(d){
+            d.innerRadius = 0;
+            d.outerRadius = r;
+            return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
+            return (data[i].value / tot ) * 100 > 10 ? ((data[i].value / tot ) * 100).toFixed(1) + "%" : "";
+            }
+        ).attr("fill","#fff")
+        .classed("slice-label",true);
+
+        vis.selectAll('g.slice')
+        .on('mouseover',function(d,i){
+           d3.select(this)
+            .attr("fill-opacity", ".8")
+            .transition()
+            .duration(500)
+            .attr("transform",function(d){
+                d.data._expanded = true;
+                var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
+                var x = Math.cos(a) * 20;
+                var y = Math.sin(a) * 20;
+                return 'translate(' + x + ',' + y + ')';
+            });
+        })
+        .on('mouseout',function(d,i){
+           d3.select(this)
+            .attr("fill-opacity", "1")
+            .transition()
+            .duration(500)
+            .attr("transform",function(d){
+                    d.data._expanded = false;
+                    return 'translate(0,0)';
+            });
+        });
+
+        var legend = svgParent.append("g")
+            .attr("class","legend")
+            .style("font-size","12px")
+            .call(d3.legend);
+        legend.attr("transform", "translate(" + ((w / 2) - (legend.node().getBBox().width / 2.5)).toString()  + "," + (vis.node().getBBox().height + 40).toString() + ")");
+        legend.selectAll('text').on("mouseover", function(d, i) {
+            d3.select(vis.selectAll('g.slice')[0][i])
+                .attr("fill-opacity", ".8")
+                .transition()
+                .duration(500)
+                .attr("transform",function(d){
+                    d.data._expanded = true;
+                    var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
+                    var x = Math.cos(a) * 20;
+                    var y = Math.sin(a) * 20;
+                    return 'translate(' + x + ',' + y + ')';
+            });
+        });
+        legend.selectAll('text').on("mouseout", function(d, i) {
+            d3.select(vis.selectAll('g.slice')[0][i])
+                .attr("fill-opacity", "1")
+                .transition()
+                .duration(500)
+                .attr("transform",function(d){
+                        d.data._expanded = false;
+                        return 'translate(0,0)';
+            });
+        });
+    }
+    </script>
 
 </body>
 
