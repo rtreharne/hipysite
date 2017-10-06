@@ -36,7 +36,7 @@ def event_data(request, event_id):
 
     writer = csv.writer(response)
     for reg in registrations:
-        writer.writerow([reg.last_name.encode('utf-8'), reg.first_name.encode('utf-8'), reg.email.encode('utf-8'), reg.department.encode('utf-8'), reg.hear.encode('utf-8')])
+        writer.writerow([reg.last_name.encode('utf-8'), reg.first_name.encode('utf-8'), reg.email.encode('utf-8'), reg.department, reg.hear])
 
     return response
 
