@@ -35,7 +35,7 @@ else:
     DEBUG = False
     THUMBNAIL_DEBUG = False
 
-
+DEBUG = TRUE
 # Application definition
 
 INSTALLED_APPS = (
@@ -149,7 +149,7 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if not DEBUG:
+if DEBUG:
 
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
