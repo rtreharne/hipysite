@@ -18,104 +18,104 @@
                     </h1>
                     <br>
                     <div class="col-md-8">
-            <p class="module-description">{{ module.description }}</p>
-        </div>
+                        <p class="module-description">{{ module.description }}</p>
+                    </div>
 
-        <div class="col-md-4">
-            <div class="team-member">
-                <h5>Module Coordinator</h5>
-                <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
-                <br>
-                {% thumbnail module.coordinator.thumbnail "150x150" crop="center" as im %}
-                    <img src="{{im.url}}" class="img-responsive img-circle" alt="">
-                {% endthumbnail %}
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <h5>Module Coordinator</h5>
+                            <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
+                            <br>
+                            {% thumbnail module.coordinator.thumbnail "150x150" crop="center" as im %}
+                                <img src="{{im.url}}" class="img-responsive img-circle" alt="">
+                            {% endthumbnail %}
 
-                <br/>
-                <ul class="list-inline social-buttons">
-                    {% if module.coordinator.github %}
-                    <li><a href="{{module.coordinator.github}}"><i class="fa fa-github"></i></a>
-                    </li>
-                    {% endif %}
-                    {% if module.coordinator.twitter %}
-                    <li><a href="{{module.coordinator.twitter}}"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    {% endif %}
-                    {% if module.coordinator.facebook %}
-                    <li><a href="{{module.coordinator.facebook}}"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    {% endif %}
-                    {% if module.coordinator.linkedIn %}
-                    <li><a href="{{module.coordinator.linkedIn}}"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
+                            <br/>
+                            <ul class="list-inline social-buttons">
+                                {% if module.coordinator.github %}
+                                <li><a href="{{module.coordinator.github}}"><i class="fa fa-github"></i></a>
+                                </li>
+                                {% endif %}
+                                {% if module.coordinator.twitter %}
+                                <li><a href="{{module.coordinator.twitter}}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                {% endif %}
+                                {% if module.coordinator.facebook %}
+                                <li><a href="{{module.coordinator.facebook}}"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                {% endif %}
+                                {% if module.coordinator.linkedIn %}
+                                <li><a href="{{module.coordinator.linkedIn}}"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                     </div>
+
                 </div>
             </div>
         </div>
     </br>
 
-  </section>
+</section>
 
+<section id="portfolio" class="bg-white element-title">
+    <div class="container">
 
-<div class="row">
-                <div class="col-md-8">
-                    <p class="text-small">{{ module.description }}</p>
+        {% for element in elements %}
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-10 text-center">
+                <h3>{{ element.title }}</h3>
+                <br>
+                <br>
+
+                <div class="col-md-6">
+
+                    <p class="element-description">{{ element.description }}</p>
+                    <ul style="list-style:none; padding: 0;">
+                        {% if element.github_link %}
+                        <li style="cursor: pointer;">
+                            <a href="{{ element.github_link }}" target="_blank"">
+                                <div class="signup signup-{{event.hive.project.title}}">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Jupyter Notebook</h4>
+                                </div>
+                            </a>
+                        </li>
+                        {% endif %}
+                        <!--
+                        {% if element.azure_link %}
+                        <li><a href="{{ element.azure_link }}" target="_blank">Azure</a></li>
+                        {% endif %}
+                        {% if element.cocalc_link %}
+                        <li><a href="{{ element.cocalc_link }}" target="_blank">CoCalc</a></li>
+                        {% endif %}
+                        -->
+                    </ul>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="team-member">
-                        {% thumbnail module.coordinator.thumbnail "150x150" crop="center" as im %}
-                            <img src="{{im.url}}" class="img-responsive img-circle" alt="">
-                        {% endthumbnail %}
-                        <h4>{{module.coordinator.first_name}} {{module.coordinator.last_name}}</h4>
-                        <br/>
-                        <ul class="list-inline social-buttons">
-                            {% if module.coordinator.github %}
-                            <li><a href="{{module.coordinator.github}}"><i class="fa fa-github"></i></a>
-                            </li>
-                            {% endif %}
-                            {% if module.coordinator.twitter %}
-                            <li><a href="{{module.coordinator.twitter}}"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            {% endif %}
-                            {% if module.coordinator.facebook %}
-                            <li><a href="{{module.coordinator.facebook}}"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            {% endif %}
-                            {% if module.coordinator.linkedIn %}
-                            <li><a href="{{module.coordinator.linkedIn}}"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
+                <div class="col-md-6" style="padding: 10px 10px;">
+                    {% if element.video_link %}
+                        <iframe width="100%" height="320px" src="https://www.youtube.com/embed/{{element.video_link}}?ecver=1" frameborder="0" allowfullscreen></iframe>
+                    {% endif %}
+
+                    <p>
+                        {% if element.prev_item %}
+                        <a href="/resources/modules/{{element.prev_item.module.slug}}/{{element.prev_item.slug }}">Previous</a>
+                        |
+                        {% endif %}
+                        {% if element.next_item %}
+                        <a href="/resources/modules/{{element.next_item.module.slug}}/{{element.next_item.slug}}">Next</a>
+                        {% endif %}
+                    </p>
                 </div>
-</div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        {% endfor %}
+    </div>
+</section>
 
 
 
-    {% thumbnail module.coordinator.thumbnail "200x200" crop="center" as im %}
-        <img src="{{im.url}}" class="img-responsive" alt="">
-    {% endthumbnail %}
-    <ul>
-        {% if module.coordinator.github %}
-            <li><a href="{{module.coordinator.github}}" target="_blank">GitHub</a></li>
-        {% endif %}
-        {% if module.coordinator.twitter %}
-            <li><a href="{{module.coordinator.twitter}}" target="_blank">Twitter</a></li>
-        {% endif %}
-        {% if module.coordinator.facebook %}
-            <li><a href="{{module.coordinator.facebook}}" target="_blank">Facebook</a></li>
-        {% endif %}
-        {% if module.coordinator.linkedIn %}
-            <li><a href="{{module.coordinator.linkedIn}}" target="_blank">LinkedIn</a></li>
-        {% endif %}
-    </ul>
-    <p>{{ module.description }}</p>
-    <ul>
-      {% for element in elements %}
-        <li><a href="{{ element.slug }}">{{ element.title }}</a></li>
-      {% endfor %}
-    </ul>
 {% endblock content %}

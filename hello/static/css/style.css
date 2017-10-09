@@ -107,7 +107,7 @@ div.signup-idea:hover {
 
 p.module-description {
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .module-title {
@@ -117,4 +117,10 @@ p.module-description {
     flex-direction: column;
     justify-content: center;
 
+}
+
+p.element-description {
+    text-align: left;
+    font-size: 1.2em;
+    padding-bottom: 20px;
 }
