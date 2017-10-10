@@ -5,6 +5,7 @@ from hello.models import Beekeeper
 
 class Module(models.Model):
     title = models.CharField(max_length=255)
+    tagline = models.CharField(max_length=35, null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True)
     coordinator = models.ForeignKey(Beekeeper)
     description = models.TextField(max_length=10000)

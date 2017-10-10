@@ -197,7 +197,7 @@
 
                 {% for module in modules %}
                 <div id="" class="col-md-4 col-sm-4 portfolio-item">
-                    <a href="/resources/modules/{{ module.slug}}" target="_blank" class="portfolio-link" >
+                    <a {% if module.live %} href="/resources/modules/{{ module.slug}}" target="_blank" {% endif %} class="portfolio-link" >
                         <div class="portfolio-hover portfolio-hover-{{module.title}}">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-play fa-3x"></i>
@@ -210,10 +210,14 @@
 
                     <div class="portfolio-caption">
                         <h4>{{ module.title }}</h4>
-                        <p class="text-muted">Coming Soon</p>
+                        {% if module.live %}
+                            <p class="text-muted">{{ module.tagline }}</p>
+                        {% else %}
+                            <p class="text-muted">Coming Soon</p>
+                        {% endif %}
                     </div>
 
-                    <a href="/resources/modules/{{ module.slug }}" target="_blank">
+                    <a {% if module.live %} href="/resources/modules/{{ module.slug }}" target="_blank" {% endif %}>
                         <div class="signup">
                             <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Start Module</h4>
                         </div>
