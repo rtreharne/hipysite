@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Module, Element
 
 def modules(request):
-    modules = Module.objects.all()
+    modules = Module.objects.all().order_by('start_date')
     return render(request, 'modules.html', {'modules': modules})
 
 def module(request, slug):

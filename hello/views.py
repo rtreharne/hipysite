@@ -67,7 +67,7 @@ def index(request):
     beekeepers = Beekeeper.objects.all()
     sponsors = Sponsor.objects.all()
     next_hive = events[0]
-    modules = Module.objects.all()
+    modules = Module.objects.all().order_by('start_date')
 
     
     return render(request, 'index.html', {'hives': hives,

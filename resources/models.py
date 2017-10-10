@@ -10,6 +10,7 @@ class Module(models.Model):
     description = models.TextField(max_length=10000)
     thumbnail = ImageField(upload_to='module_thumb', null=True, blank=True)
     live = models.BooleanField(default=False)
+    start_date = models.DateField(null=True, blank=True)
 
     def __unicode__(self):
         return self.title
