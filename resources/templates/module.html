@@ -82,6 +82,24 @@
                             </a>
                         </li>
                         {% endif %}
+                        {% if element.azure_link %}
+                        <li style="cursor: pointer;">
+                            <a href="{{ element.azure_link }}" target="_blank"">
+                                <div class="signup signup-{{event.hive.project.title}}">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Azure Notebook</h4>
+                                </div>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if element.cocalc_link %}
+                        <li style="cursor: pointer;">
+                            <a href="{{ element.cocalc_link }}" target="_blank"">
+                                <div class="signup signup-{{event.hive.project.title}}">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">CoCalc Notebook</h4>
+                                </div>
+                            </a>
+                        </li>
+                        {% endif %}
                         <!--
                         {% if element.azure_link %}
                         <li><a href="{{ element.azure_link }}" target="_blank">Azure</a></li>
