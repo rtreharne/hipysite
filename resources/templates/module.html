@@ -75,9 +75,16 @@
                     <ul style="list-style:none; padding: 0;">
                         {% if element.github_link %}
                         <li style="cursor: pointer;">
+                            <a href="{{ element.github_repo }}" target="_blank"">
+                                <div class="signup signup-{{event.hive.project.title}}">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">GitHub Folder</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li style="cursor: pointer;">
                             <a href="{{ element.github_link }}" target="_blank"">
                                 <div class="signup signup-{{event.hive.project.title}}">
-                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Jupyter Notebook</h4>
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Jupyter NBViewer</h4>
                                 </div>
                             </a>
                         </li>

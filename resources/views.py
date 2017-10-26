@@ -9,6 +9,9 @@ def module(request, slug):
     module = Module.objects.filter(slug=slug)[0]
     elements = Element.objects.filter(module=module).order_by('id')
     for element in elements:
+
+        element.github_repo = '/'.join(element.github_link.split('/')[:-1])
+        print element.github_repo
         if element.github_link:
             element.github_link = element.github_link.strip('https://').replace('github.com', 'github')
             element.github_link = 'https://nbviewer.jupyter.org/' + element.github_link
