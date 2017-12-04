@@ -19,7 +19,7 @@ def email_list(request):
     registrations = Registration.objects.all().order_by('last_name')
     email_list = set([x.email for x in registrations])
 
-    writer = csv.writer(response)
+    writer = csv.writer(response, encoding='utf-8-sig')
     for email in email_list:
         print(email)
         writer.writerow([email])
