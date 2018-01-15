@@ -124,3 +124,7 @@ p.element-description {
     font-size: 1.2em;
     padding-bottom: 20px;
 }
+
+.portfolio-caption {
+    min-height: 235px;
+}
