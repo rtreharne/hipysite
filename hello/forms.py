@@ -63,6 +63,7 @@ class RegistrationForm(forms.ModelForm):
             ("Politics", "Politics"),
             ("Sociology", "Sociology"),
             ("Stephenson Institute", "Stephenson Institute"),
+            ("XJTLU Student", "XJTLU Student"),
             ("External", "External Group/Business/Organisation"),
             ("Other", "Other")
         ],
