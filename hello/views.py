@@ -19,10 +19,11 @@ def email_list(request):
     registrations = Registration.objects.all().order_by('last_name')
     email_list = set([x.email for x in registrations])
 
-    writer = csv.writer(response, encoding='utf-8-sig')
-    for email in email_list:
-        print(email)
-        writer.writerow([email])
+    writer = csv.writer(response)
+    for reg in registrations:
+        writer.writerow(
+            [reg.last_name.encode('utf-8'), reg.first_name.encode('utf-8'), reg.email.encode('utf-8'), reg.department,
+             reg.hear])
 
     return response
 
