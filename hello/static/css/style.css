@@ -135,3 +135,7 @@ p.element-description {
     text-align: center;
     padding: 25px;
 }
+.map iframe {
+    border: none;
+    width: 100%;
+}

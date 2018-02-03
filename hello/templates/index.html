@@ -131,7 +131,9 @@
                         <p class="text-muted">{{ event.hive.subtitle }}</p>
                         </br>
                         <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"H:i"|lower}} - {{event.finish_time|date:"H:i"|lower}}</strong></p>
-                        <p style="font-size: 0.95em;">{{event.location}}</p>
+                        <a href="/#map"
+                            <p style="font-size: 0.95em;">{{event.location}}</p>
+                        </a>
                         </br>
                         {% if not event.signupURL %}
                         <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }} / {{ event.max_reg }}</p>
@@ -168,6 +170,11 @@
 
 
             </div>
+            <div id="map" class="map">
+                <iframe src="https://www.google.com/maps/d/u/3/embed?mid=1R0oVGygfehzmygdcBckj_9wM5ek8Dw6V" width="640" height="480"></iframe>
+            </div>
+
+
         </div>
     </section>
 
