@@ -157,6 +157,56 @@
                     {% endif %}
                 </div>
                 {% endfor %}
+            </div>
+            <div class="row">
+
+                {% for event in events %}
+                <div id="port_{{ event.id }}" class="col-md-4 portfolio-item">
+                    <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover portfolio-hover-{{event.hive.project.title}}">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        {% thumbnail event.hive.thumbnail "600x400" crop="center" as im %}
+                        <img src="{{im.url}}" class="img-responsive" alt="">
+                        {% endthumbnail %}
+
+
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{ event.hive.title }}</h4>
+                        <p class="text-muted">{{ event.hive.subtitle }}</p>
+                        </br>
+                        <p><strong>{{event.start_time|date:"D d M Y"}}, {{event.start_time|date:"H:i"|lower}} - {{event.finish_time|date:"H:i"|lower}}</strong></p>
+                        <p style="font-size: 0.95em;">{{event.location}}</p>
+                        </br>
+                        {% if not event.signupURL %}
+                        <p><i class="fa fa-users" aria-hidden="true"></i> {{ event.registrations }} / {{ event.max_reg }}</p>
+                        {% else %}
+                        <p><i style="color: white" class="fa fa-users" aria-hidden="true"></i>A HiPy Friends Event<i style="color: white" class="fa fa-users" aria-hidden="true"></i></p>
+                        {% endif %}
+                    </div>
+
+                        {% if event.max_reg <= event.registrations %}
+                            <div class="signup signup-{{event.hive.project.title}}">
+                                    <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
+                            </div>
+                        {% else %}
+                            {% if event.signupURL %}
+                                <a href="{{ event.signupURL }}" target="_blank">
+                            {% else %}
+                                <a href="/register/{{ event.id }}">
+                            {% endif %}
+                                    <div class="signup signup-{{event.hive.project.title}}">
+                                        <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                                    </div>
+                                </a>
+
+                        {% endif %}
+                </div>
+                {% endfor %}
+
                 <!--
                 <div class="col-md-8 col-md-offset-2" style="text-align:center;">
                     <h3 class="section-heading"> Previous Hives</h3>
@@ -171,8 +221,10 @@
                     <a href="email-list/"><i class="fa fa-envelope fa-3x"> {{ emails_len }}</i></a>
                 </div>
                 {% endif %}
-            </div>
 
+
+
+            </div>
         </div>
     </section>
 
