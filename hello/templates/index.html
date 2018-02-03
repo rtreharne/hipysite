@@ -111,7 +111,7 @@
             <div class="row">
 
                 {% for event in events %}
-                <div id="port_{{ event.id }}"class="col-md-4 col-sm-4 portfolio-item">
+                <div id="port_{{ event.id }}"class="col-md-4 portfolio-item">
                     <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover portfolio-hover-{{event.hive.project.title}}">
                             <div class="portfolio-hover-content">
@@ -159,7 +159,7 @@
 
                 <div class="col-md-8 col-md-offset-2" style="text-align:center;">
                     <h3 class="section-heading"> Previous Hives</h3>
-                    {% for pevent in past_events %}
+                    {% for pevent in past_events|slice:":3" %}
                     <p><a href="hive/{{ pevent.id }}" target="_blank">{{ pevent.hive.title }}</a>, {{pevent.start_time|date:"D d M Y"}}, {{ pevent.location }} | <i class="fa fa-users" aria-hidden="true"></i> {{ pevent.registrations }}</p>
                     {% endfor %}
                 </div>
@@ -196,7 +196,7 @@
             <div class="row">
 
                 {% for module in modules %}
-                <div id="" class="col-md-4 col-sm-4 portfolio-item">
+                <div id="" class="col-md-4 portfolio-item">
                     <a {% if module.live %} href="/resources/modules/{{ module.slug}}" target="_blank" {% endif %} class="portfolio-link" >
                         <div class="portfolio-hover portfolio-hover-{{module.title}}">
                             <div class="portfolio-hover-content">
@@ -208,7 +208,7 @@
                         {% endthumbnail %}
                     </a>
 
-                    <div class="portfolio-caption">
+                    <div class="resource-caption">
                         <h4>{{ module.title }}</h4>
                         {% if module.live %}
                             <p class="text-muted">{{ module.tagline }}</p>
