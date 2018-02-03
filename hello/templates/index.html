@@ -112,16 +112,18 @@
             <div class="row">
 
                 {% for module in modules %}
-                <div id="" class="col-md-4 portfolio-item">
-                    <a {% if module.live %} href="/resources/modules/{{ module.slug}}" target="_blank" {% endif %} class="portfolio-link" >
-                        <div class="portfolio-hover portfolio-hover-{{module.title}}">
+                <div id="port_{{ event.id }}" class="col-md-4 portfolio-item">
+                    <a href="#portfolioModal{{event.id}}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover portfolio-hover-{{event.hive.project.title}}">
                             <div class="portfolio-hover-content">
-                                <i class="fa fa-play fa-3x"></i>
+                                <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        {% thumbnail module.thumbnail "600x400" crop="center" as im %}
+                        {% thumbnail event.hive.thumbnail "600x400" crop="center" as im %}
                         <img src="{{im.url}}" class="img-responsive" alt="">
                         {% endthumbnail %}
+
+
                     </a>
 
                     <div class="resource-caption">
