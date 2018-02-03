@@ -140,11 +140,21 @@
                         {% endif %}
                     </div>
 
-                    <a {% if module.live %} href="/resources/modules/{{ module.slug }}" target="_blank" {% endif %}>
-                        <div class="signup">
-                            <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Start Module</h4>
+                    {% if event.max_reg <= event.registrations %}
+                        <div class="signup signup-{{event.hive.project.title}}">
+                                <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Fully Booked</h4>
                         </div>
-                    </a>
+                        {% else %}
+                            {% if event.signupURL %}
+                                <a href="{{ event.signupURL }}" target="_blank">
+                            {% else %}
+                                <a href="/register/{{ event.id }}">
+                            {% endif %}
+                                    <div class="signup signup-{{event.hive.project.title}}">
+                                        <h4 style="padding-top: 30px;text-align: center; color: white; margin:0;">Sign me up!</h4>
+                                    </div>
+                                </a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
